@@ -127,16 +127,19 @@
 - Implement `p01-hello-world.py` and run it
 
   ``` pwsh
-  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file p01-hello-world.py
+  PS D:\home.UserRus\Documents.Notes\__learn-python-01> python -m venv venv        
+  PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file .\chp001\p01-hello-world.py
 
-      Directory: D:\home.UserRus\Documents.Notes\__learn-python-01
+      Directory: D:\home.UserRus\Documents.Notes\__learn-python-01\chp001
 
   Mode                 LastWriteTime         Length Name
   ----                 -------------         ------ ----
-  -a---          14.08.2025    17:51              0 p01-hello-world.py
+  -a---          14.08.2025    19:27              0 p01-hello-world.py
 
-  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> python .\p01-hello-world.py
+  PS D:\home.UserRus\Documents.Notes\__learn-python-01> .\venv\Scripts\Activate.ps1
+  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> python .\chp001\p01-hello-world.py
   Hello, World!
+  Hello, World! how is it going?
   (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> 
   ```
 
@@ -144,19 +147,17 @@
 
 - see [hartl](../README.md#hartl) p.16
 
-- We implemented `p02-hello-world-script`. For this, we opened a _git bash_ in
+- We implemented `p02-hello-world-script`. For this, we opened a _git bash_
 
   ``` bash
-  (venv) 
+  (venv)
   chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
-  $ ls -la ./p02-hello-world-script
-  -rwxr-xr-x 1 chris 197609 64 Aug 14 18:12 ./p02-hello-world-script*
-  (venv) 
+  $ ls -la ./chp001/p02-hello-world-script 
+  -rwxr-xr-x 1 chris 197609 64 Aug 14 18:12 ./chp001/p02-hello-world-script*  
+  (venv)
   chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
-  $ ./p02-hello-world-script 
+  $ ./chp001/p02-hello-world-script 
   Hello, World! from script
-  (venv) 
-  chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
   ```
 
 ## 1.5 Python in a Web Server
@@ -181,17 +182,17 @@ Requirement already satisfied: pip in d:\home.userrus\documents.notes\__learn-py
 (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> pip install Flask
 
 # Create app file; … implementation follows
-(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file p03-hello-app.py     
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file ./chp001/p03-hello-app.py     
 
-    Directory: D:\home.UserRus\Documents.Notes\__learn-python-01
+    Directory: D:\home.UserRus\Documents.Notes\__learn-python-01\chp001
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
 -a---          14.08.2025    18:32              0 p03-hello-app.py
 
 # Run app
-(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> flask --app .\p03-hello-app.py --debug run
- * Serving Flask app '.\p03-hello-app.py'
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> flask --app .\chp001\p03-hello-app.py --debug run
+ * Serving Flask app '.\chp001\p03-hello-app.py'
  * Debug mode: on
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on http://127.0.0.1:5000
