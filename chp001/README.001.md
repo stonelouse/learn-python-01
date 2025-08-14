@@ -6,6 +6,7 @@
     - [Self contained virtual environments](#self-contained-virtual-environments)
     - [`venv` and `pip` package](#venv-and-pip-package)
     - [Creating a virtual environment](#creating-a-virtual-environment)
+    - [Implement and run first Python program](#implement-and-run-first-python-program)
 
 ## 1.2. Python in a REPL
 
@@ -115,4 +116,22 @@
   (venv) PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01> deactivate
   PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01> $env:VIRTUAL_ENV
   PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01>
+  ```
+
+### Implement and run first Python program
+
+- Implement `p01-hello-world.py` and run it
+
+  ``` pwsh
+  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file p01-hello-world.py
+
+      Directory: D:\home.UserRus\Documents.Notes\__learn-python-01
+
+  Mode                 LastWriteTime         Length Name
+  ----                 -------------         ------ ----
+  -a---          14.08.2025    17:51              0 p01-hello-world.py
+
+  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> python .\p01-hello-world.py
+  Hello, World!
+  (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> 
   ```
