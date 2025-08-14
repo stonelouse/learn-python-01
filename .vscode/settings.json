@@ -6,6 +6,8 @@
     "Pythonic",
     "pyvenv",
     "rwxr",
-    "venv"
+    "userrus",
+    "venv",
+    "WSGI"
   ]
 }

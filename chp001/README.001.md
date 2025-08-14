@@ -8,6 +8,9 @@
     - [Creating a virtual environment](#creating-a-virtual-environment)
     - [Implement and run first Python program](#implement-and-run-first-python-program)
   - [1.4 Python in a Shell Script](#14-python-in-a-shell-script)
+  - [1.5 Python in a Web Server](#15-python-in-a-web-server)
+    - [Flask](#flask)
+    - [pip command](#pip-command)
 
 ## 1.2. Python in a REPL
 
@@ -155,3 +158,47 @@
   (venv) 
   chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
   ```
+
+## 1.5 Python in a Web Server
+
+- see [hartl](../README.md#hartl) p.18
+
+### Flask
+
+- [Flask](https://flask.palletsprojects.com/) micro-framework
+
+### pip command
+
+- `pip` – "_pip installs packages_"  
+  … part of `venv`
+
+``` pwsh
+# Upgrade pip
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> pip install --upgrade pip
+Requirement already satisfied: pip in d:\home.userrus\documents.notes\__learn-python-01\venv\lib\site-packages (25.2)
+
+# Install Flask
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> pip install Flask
+
+# Create app file; … implementation follows
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> New-Item -Type file p03-hello-app.py     
+
+    Directory: D:\home.UserRus\Documents.Notes\__learn-python-01
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          14.08.2025    18:32              0 p03-hello-app.py
+
+# Run app
+(venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> flask --app .\p03-hello-app.py --debug run
+ * Serving Flask app '.\p03-hello-app.py'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 894-431-672
+127.0.0.1 - - [14/Aug/2025 18:34:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Aug/2025 18:34:58] "GET /favicon.ico HTTP/1.1" 404 -
+```
