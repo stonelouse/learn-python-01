@@ -7,6 +7,7 @@
     - [`venv` and `pip` package](#venv-and-pip-package)
     - [Creating a virtual environment](#creating-a-virtual-environment)
     - [Implement and run first Python program](#implement-and-run-first-python-program)
+  - [1.4 Python in a Shell Script](#14-python-in-a-shell-script)
 
 ## 1.2. Python in a REPL
 
@@ -134,4 +135,23 @@
   (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> python .\p01-hello-world.py
   Hello, World!
   (venv) PS D:\home.UserRus\Documents.Notes\__learn-python-01> 
+  ```
+
+## 1.4 Python in a Shell Script
+
+- see [hartl](../README.md#hartl) p.16
+
+- We implemented `p02-hello-world-script`. For this, we opened a _git bash_ in
+
+  ``` bash
+  (venv) 
+  chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
+  $ ls -la ./p02-hello-world-script
+  -rwxr-xr-x 1 chris 197609 64 Aug 14 18:12 ./p02-hello-world-script*
+  (venv) 
+  chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
+  $ ./p02-hello-world-script 
+  Hello, World! from script
+  (venv) 
+  chris@ARLT MINGW64 /d/home.UserRus/Documents.Notes/__learn-python-01 (main)
   ```
