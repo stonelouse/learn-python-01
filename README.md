@@ -5,15 +5,16 @@
     - [hartl](#hartl)
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
-    - [Notable differences between python and most other languages](#notable-differences-between-python-and-most-other-languages)
+    - [Notable differences between Python and most other languages](#notable-differences-between-python-and-most-other-languages)
   - [Overview](#overview)
     - [Chapter 1](#chapter-1)
+    - [Chapter 2 - String Basics](#chapter-2---string-basics)
 
 ## References
 
 ### hartl
 
-- Hartl, Michael: Learn enough python to be dangerous, Humble Bundle Pearson, 2023
+- Hartl, Michael: Learn enough Python to be dangerous, Humble Bundle Pearson, 2023
 
 ## Notes
 
@@ -21,7 +22,7 @@
 
 - see [hartl](#hartl) p.2
 
-### Notable differences between python and most other languages
+### Notable differences between Python and most other languages
 
 - see [hartl](#hartl) p.6
 
@@ -29,4 +30,11 @@
 
 ### Chapter 1
 
-- Python in a REPL
+- [1.2 Python in a REPL](./chp001/README.001.md#12-python-in-a-repl)
+- [1.2 Python in a File](./chp001/README.001.md#13-python-in-a-file)
+- [1.2 Python in a Shell Script](./chp001/README.001.md#14-python-in-a-shell-script)
+- [1.2 Python in a Web Server](./chp001/README.001.md#15-python-in-a-web-server)
+
+### Chapter 2 - String Basics
+
+- TODO
