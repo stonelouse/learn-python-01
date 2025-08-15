@@ -3,6 +3,8 @@
 - [Learning Python](#learning-python)
   - [References](#references)
     - [hartl](#hartl)
+  - [Links](#links)
+    - [PEP 8](#pep-8)
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
     - [Notable differences between Python and most other languages](#notable-differences-between-python-and-most-other-languages)
@@ -14,7 +16,14 @@
 
 ### hartl
 
-- Hartl, Michael: Learn enough Python to be dangerous, Humble Bundle Pearson, 2023
+- Hartl, Michael: Learn enough Python to be dangerous, Humble Bundle Pearson, 2023  
+  [Source Code | GitHub](https://github.com/learnenough/learn_enough_python_code_listings)
+
+## Links
+
+### PEP 8
+
+- [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
 ## Notes
 
