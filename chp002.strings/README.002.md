@@ -6,6 +6,9 @@
     - [String Literals](#string-literals)
     - [Quotes](#quotes)
     - [Triple-Quoted strings](#triple-quoted-strings)
+  - [2.2 Concatenation and Interpolation](#22-concatenation-and-interpolation)
+    - [Variables](#variables)
+    - [Formatted Strings](#formatted-strings)
 
 ## 2.1 String Basics
 
@@ -32,7 +35,30 @@
   "It's not easy being green"
   >>> 'It is written "Python"'
   'It is written "Python"'
-  >>>
+  
+  # Exercise 2.1.1
+  >>> 'It\'s not "easy" being green'
+  'It\'s not "easy" being green'
+  >>> print('It\'s not "easy" being green')
+  It's not "easy" being green
+  >>> 'hello\tgoodbye'
+  'hello\tgoodbye'
+  >>> print('hello\tgoodbye')
+  hello   goodbye
+  >>> 'hello\ngoodbye'
+  'hello\ngoodbye'
+  >>> print('hello\ngoodbye')
+  hello  
+  goodbye
+  # ☝ Notice the special 'r' behavior!
+  >>> r'hello\ngoodbye'
+  'hello\\ngoodbye'
+  >>> print(r'hello\ngoodbye')
+  hello\ngoodbye
+  >>> print("hello\ngoodbye")
+  hello
+  goodbye
+  >>> 
   ```
 
 ### Triple-Quoted strings
@@ -61,3 +87,44 @@
 - [PEP 8](../README.md#pep-8) indicates that  
   … *single-quoted* and *double-quoted* strings are both acceptable as long as you're consistent,  
   … BUT *triple-quoted* strings should always use the ***double-quoted*** variant.
+
+## 2.2 Concatenation and Interpolation
+
+- see [hartl](../README.md#hartl) p.38
+
+- can be accomplished using the `+`-operator.
+  
+  ``` Python
+  # see https://www.learnenough.com/command-line-tutorial/manipulating_files#aside-foo-bar
+  >>> "foo" + "bar"
+  'foobar'
+  >>> first_name = "John"
+  >>> last_name = "Doe"
+  >>> first_name + ", " + last_name
+  'John, Doe'  
+  ```
+
+### Variables
+
+- are written in **snake case**
+
+### Formatted Strings
+
+- see [hartl](../README.md#hartl) p.41
+
+- Most *pythonic* way to build up strings is 
+  … via *interpolation* using **formatted strings**, or **f-strings**
+
+  ``` Python
+  >>> first_name = "John"
+  >>> last_name = "Doe"
+  # … using formatted strings; since Python 3.6
+  >>> f"{first_name}, {last_name}" 
+  'John, Doe'
+  # … using str.format(); see https://realpython.com/python-f-strings/
+  >>> "{}, {}".format(first_name, last_name) 
+  'John, Doe'
+  # … using '%' formatting
+  >>> "%s, %s" % (first_name, last_name)
+  'John, Doe'
+  ```
