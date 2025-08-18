@@ -8,7 +8,9 @@
     - [Triple-Quoted strings](#triple-quoted-strings)
   - [2.2 Concatenation and Interpolation](#22-concatenation-and-interpolation)
     - [Variables](#variables)
-    - [Formatted Strings](#formatted-strings)
+    - [Formatted Strings – `str.format()` –  `%`](#formatted-strings--strformat---)
+    - [Raw Strings](#raw-strings)
+    - [Formatted Triple-quoted Strings](#formatted-triple-quoted-strings)
 
 ## 2.1 String Basics
 
@@ -108,11 +110,11 @@
 
 - are written in **snake case**
 
-### Formatted Strings
+### Formatted Strings – `str.format()` –  `%`
 
 - see [hartl](../README.md#hartl) p.41
 
-- Most *pythonic* way to build up strings is 
+- Most *pythonic* way to build up strings is
   … via *interpolation* using **formatted strings**, or **f-strings**
 
   ``` Python
@@ -127,4 +129,63 @@
   # … using '%' formatting
   >>> "%s, %s" % (first_name, last_name)
   'John, Doe'
+  ```
+
+### Raw Strings
+
+- Raw strings are **truly literal**  
+  … containing exactly the characters you type.  
+  … For example, Python **won't interpolate** into *raw strings* () or in *regular strings*.
+
+  ``` Python
+  >>> first_name = "John"
+  >>> last_name = "Doe"
+  # Formatted string
+  >>> f"{first_name}, {last_name}"
+  'John, Doe'
+  # Regular string
+  >>> "{first_name}, {last_name}"
+  '{first_name}, {last_name}'
+  # Raw string
+  >>> r"{first_name}, {last_name}"
+  '{first_name}, {last_name}'  
+  ```
+
+  ``` Python
+  >>> "{first_name}\n{last_name}"
+  '{first_name}\n{last_name}'
+  >>> print("{first_name}\n{last_name}")
+  {first_name}
+  {last_name} 
+  >>> "{first_name}\\n{last_name}"
+  '{first_name}\\n{last_name}'
+  >>> print("{first_name}\\n{last_name}")
+  {first_name}\n{last_name}
+  >>> r"{first_name}\n{last_name}"
+  # REPL escapes 'backslash n' combination
+  '{first_name}\\n{last_name}'
+  # literal 'backslash n' combination with raw string
+  >>> print(r"{first_name}\n{last_name}")
+  {first_name}\n{last_name}
+  ```
+
+### Formatted Triple-quoted Strings
+
+- … also support interpolation
+
+  ``` Python
+  '''{first_name},
+  ... {last_name}'''
+  '{first_name},\n{last_name}'
+  >>> print('''{first_name},
+  ... {last_name}''')
+  {first_name},
+  {last_name}
+  >>> f'''{first_name},
+  ... {last_name}'''
+  'John,\nDoe'
+  >>> print(f'''{first_name},
+  ... {last_name}''')
+  John,
+  Doe
   ```
