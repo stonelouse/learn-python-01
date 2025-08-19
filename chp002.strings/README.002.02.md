@@ -119,7 +119,7 @@
   ... elif len(password) < 20:
   ...     print("Password is just right");
   ... else:
-  ...     print("Passowrd is too long")
+  ...     print("Password is too long")
   ...     
   Password is just right
   ```
