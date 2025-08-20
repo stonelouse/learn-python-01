@@ -10,6 +10,7 @@
     - [`if`](#if)
     - [`else`](#else)
     - [`elif` - "else if"](#elif---else-if)
+    - [Combining and inverting booleans - `and`, `or`, `not`](#combining-and-inverting-booleans---and-or-not)
 
 ## 2.3 Printing
 
@@ -110,7 +111,7 @@
 
 ### `elif` - "else if"
 
-- xxx
+- Control-flow with `elif`
 
   ``` Python
   >>> password = "1234567890"
@@ -122,4 +123,73 @@
   ...     print("Password is too long")
   ...     
   Password is just right
+  ```
+
+### Combining and inverting booleans - `and`, `or`, `not`
+
+- continued see [hartl](../README.md#hartl) p.51
+
+- Combining and inverting booleans
+
+  ``` Python
+  >>> x = ''
+  >>> y = 'y'
+  >>> if len(x) == 0 and len(y) == 0:
+  ...     print("x and y are empty")
+  ... if len(x) == 0 or len(y) == 0:
+  ...     print("x or y are empty")
+  ... if not len(x) == 0:
+  ...     print("x is not empty")
+  ... if not len(y) == 0:
+  ...     print("y is not empty")
+  ... if not (len(x) == 0):
+  ...     print("x is not empty")
+  ... if (not len(y) == 0):
+  ...     print("y is not empty")
+  ... 
+  x or y are empty
+  y is not empty
+  y is not empty
+  ```
+
+  ``` Python
+  >>> x = 'x'
+  >>> y = 'y'
+  >>> if len(x) == 0 and len(y) == 0:
+  ...     print("x and y are empty")
+  ... if len(x) == 0 or len(y) == 0:
+  ...     print("x or y are empty")
+  ... if not len(x) == 0:
+  ...     print("x is not empty")
+  ... if not len(y) == 0:
+  ...     print("y is not empty")
+  ... if not (len(x) == 0):
+  ...     print("x is not empty")
+  ... if (not len(y) == 0):
+  ...     print("y is not empty")
+  ... 
+  x is not empty
+  y is not empty
+  x is not empty
+  y is not empty
+  ```
+
+  ``` Python
+  >>> x = ''
+  >>> y = ''
+  >>> if len(x) == 0 and len(y) == 0:
+  ...     print("x and y are empty")
+  ... if len(x) == 0 or len(y) == 0:
+  ...     print("x or y are empty")
+  ... if not len(x) == 0:
+  ...     print("x is not empty")
+  ... if not len(y) == 0:
+  ...     print("y is not empty")
+  ... if not (len(x) == 0):
+  ...     print("x is not empty")
+  ... if (not len(y) == 0):
+  ...     print("y is not empty")
+  ... 
+  x and y are empty
+  x or y are empty
   ```
