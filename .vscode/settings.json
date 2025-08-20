@@ -5,6 +5,8 @@
     "elif",
     "foobarbaz",
     "hartl",
+    "islower",
+    "isupper",
     "pwsh",
     "pycache",
     "Pythonic",
