@@ -11,6 +11,7 @@
     - [`else`](#else)
     - [`elif` - "else if"](#elif---else-if)
     - [Combining and inverting booleans - `and`, `or`, `not`](#combining-and-inverting-booleans---and-or-not)
+    - [Bang equals `!=`](#bang-equals-)
 
 ## 2.3 Printing
 
@@ -193,3 +194,24 @@
   x and y are empty
   x or y are empty
   ```
+
+### Bang equals `!=`
+
+- continued see [hartl](../README.md#hartl) p.54
+
+- The same as above, using *bang equals*
+
+  ``` Python
+  >>> x = 'x'
+  >>> if not len(x) == 0: # Not Pythonic!
+  ...     print('x is not empty')
+  ... if len(x) != 0: # Not quite Pythonic
+  ...     print('x is not empty again')
+  ... 
+  x is not empty
+  x is not empty again  
+  ```
+
+- In this case, it's more common to use `!=`  
+  … This code is still not be considered fully *Pythonic*,  
+  … because the empty string '' has a special value in **boolean context**.
