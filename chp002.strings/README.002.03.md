@@ -4,6 +4,7 @@
   - [2.4 Length, Boolean, and Control Flow](#24-length-boolean-and-control-flow)
     - [Boolean Context - `bool()`](#boolean-context---bool)
   - [2.5 Methods](#25-methods)
+    - [`.find()` method as example](#find-method-as-example)
 
 ## 2.4 Length, Boolean, and Control Flow
 
@@ -100,5 +101,43 @@
   'Minion'
   >>> m
   'minion'
-  >>>
+  >>> m_upper = m.upper()
+  >>> m_upper
+  'MINION'
+  >>> m_lower = m_upper.lower()
+  >>> m_lower
+  'minion'
+  ```
+
+- see <https://docs.python.org/3/library/stdtypes.html#string-methods>
+
+### `.find()` method as example
+
+- see <https://docs.python.org/3/library/stdtypes.html#str.find>
+
+- To check if *sub* is a substring or not, use the [`in`](https://docs.python.org/3/reference/expressions.html#in) operator.
+
+  ``` Python
+  >>> m.find('ini') # `zero offset` or `zero-based indexing`
+  1
+  >>> m.find('uno') # not found
+  -1
+  >>> 'ini' in m # the `in` operator
+  True
+  >>> 'uno' in m
+  False
+  ```
+
+- Exercise 2.5.1
+
+  - [`.casefold()`](https://docs.python.org/3/library/stdtypes.html#str.casefold)
+  - [`.strip()`](https://docs.python.org/3/library/stdtypes.html#str.split)
+  
+  ``` Python
+  >>> "badger" in "hoNeY BaDGer".casefold()
+  True
+  >>> "  spacious  "
+  '  spacious  '
+  >>> "  spacious  ".strip()
+  'spacious'
   ```
