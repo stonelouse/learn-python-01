@@ -251,9 +251,8 @@
   ...     print(c)
   ```
 
-- Excursus: slicing operation
-
-  > GitHub Copilot:
+- GitHub Copilot: slicing operation
+  
   >
   > - The code snippet:
   >
