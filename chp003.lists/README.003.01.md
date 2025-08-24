@@ -5,33 +5,10 @@
     - [`split()` method](#split-method)
     - [`splitlines()` method](#splitlines-method)
     - [`list()` function](#list-function)
-
-- see [hartl](../README.md#hartl) p.69
-
-- **Lists** is the *data type*, which is the **general Python container**  
-  … for a list of arbitrary *elements* in **particular order**.
-
-- Python's *Lists* are similar to the *array* data type in other languages.  
-  
-- GitHub Copilot:  
-  > Python **does not have** a *built-in data type called 'array'*  
-  > in the same way as some other languages like Java or C.
-  >
-  > Instead, Python provides:  
-  > - The `list` type,  
-  >   … which is a flexible, *built-in sequence type*  
-  >   … that can store elements of *any type*  
-  >   … and is *used like an array* in many cases.
-  > - The *`array` module*,  
-  >   … which provides an `array` type (`array.array`)  
-  >   … for storing *elements of a single numeric* type **more efficiently**,  
-  >   … but it is not as commonly used as lists.
-  > - For advanced *numerical arrays*, the *NumPy* library (not built-in)  
-  >   … provides the `ndarray` type,  
-  >   … which is widely used in scientific computing.  
-  >
-  > In summary:  
-  > … Python’s closest built-in equivalent to an array is the *list type*.
+  - [3.2 List Access](#32-list-access)
+    - [Literal square bracket syntax](#literal-square-bracket-syntax)
+    - [List access - bracket notation](#list-access---bracket-notation)
+    - [Lists in a Boolean context](#lists-in-a-boolean-context)
 
 ## 3.1 Splitting
 
@@ -104,4 +81,79 @@
   ['A man', 'a plan', 'a canal', 'Panama']
   >>> a[::-1] # reverse the list via slice operator
   ['Panama', 'a canal', 'a plan', 'A man']
+  ```
+
+## 3.2 List Access
+
+- see [hartl](../README.md#hartl) p.71
+
+### Literal square bracket syntax
+
+- Literal square bracket syntax:
+
+  ``` Python
+  >>> # creating a list using literal square-bracket syntax
+  >>> a = ["badger", 42, "or not" in "To be or not to be"]
+  ```
+
+### List access - bracket notation
+
+- List access - bracket notation
+
+  ``` Python
+  >>> # accessing list elements with `bracket notation`
+  >>> a[0]
+  'badger'
+  >>> a[2]
+  True
+  >>> a[1]
+  42  
+  >>> a[3]
+  Traceback (most recent call last):
+    File "<python-input-4>", line 1, in <module>
+      a[3]
+      ~^^^
+  IndexError: list index out of range
+  >>> a[-1]
+  True
+  >>> a[-2]
+  42
+  >>> a[-3]
+  'badger'
+  >>> a[-4]
+  Traceback (most recent call last):
+    File "<python-input-8>", line 1, in <module>
+      a[-4]
+      ~^^^^
+  IndexError: list index out of range
+
+### Apply `len()` function on lists
+
+- Apply `len()` function on lists
+
+  ``` Python
+  >>> len(a)
+  3
+  ```
+
+### Lists in a Boolean context
+
+- Apply `len()` function on lists
+
+  ``` Python
+  >>> bool([]) # empty list are False in a boolean context
+  False
+  >>> bool([1, 2, 3])
+  True
+  ```
+
+- Exercise 3.2.1
+
+  ``` Python
+  >>> list(range(4))
+  [0, 1, 2, 3]
+  >>> list(range(5))
+  [0, 1, 2, 3, 4]
+  >>> list(range(17, 42))
+  [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]  
   ```
