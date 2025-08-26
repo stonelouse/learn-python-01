@@ -4,7 +4,7 @@
   - [2.4 Length, Boolean, and Control Flow](#24-length-boolean-and-control-flow)
     - [Boolean Context - `bool()`](#boolean-context---bool)
   - [2.5 Methods](#25-methods)
-    - [`.find()` method as example](#find-method-as-example)
+    - [`.find()` method and `in` operator](#find-method-and-in-operator)
   - [2.6 String Iteration](#26-string-iteration)
     - [Accessing a particular character – square brackets](#accessing-a-particular-character--square-brackets)
     - [`for` loop and `range()` function](#for-loop-and-range-function)
@@ -115,9 +115,10 @@
 
 - see <https://docs.python.org/3/library/stdtypes.html#string-methods>
 
-### `.find()` method as example
+### `.find()` method and `in` operator
 
 - see <https://docs.python.org/3/library/stdtypes.html#str.find>
+- see <https://python-reference.readthedocs.io/en/latest/docs/operators/in.html>
 
 - To check if *sub* is a substring or not, use the [`in`](https://docs.python.org/3/reference/expressions.html#in) operator.
 
@@ -279,6 +280,14 @@
   >   ```
   >
   >   Note: The code as written is an expression, not a complete statement. To see > the result, you would need to print it or assign it to another variable.
+
+- Alternatively, we can use the [`reversed()`](https://docs.python.org/3/library/functions.html#reversed) *fn*, which returns an **iterator** which we can use to create a *string*
+
+  ``` Python
+  >>> soliloquy = "hello"
+  >>> ''.join(reversed(soliloquy))
+  'olleh'
+  ```
 
 - The *Pythonic* way to iterate over the characters of a string and having access to the character's index – [**`enumerate()`**](https://docs.python.org/3/library/functions.html#enumerate) function:
 

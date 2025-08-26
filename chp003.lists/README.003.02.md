@@ -1,8 +1,15 @@
 # 3. Lists
 
-TODO TOC
-
-- see [hartl](../README.md#hartl) p.74
+- [3. Lists](#3-lists)
+  - [3.3 List Slicing](#33-list-slicing)
+    - [`slice()` function](#slice-function)
+    - [Slicing using extended index syntax](#slicing-using-extended-index-syntax)
+  - [3.4 More List Techniques](#34-more-list-techniques)
+    - [3.4.1 Element Inclusion](#341-element-inclusion)
+    - [3.4.2 Sorting and Reversing](#342-sorting-and-reversing)
+      - [`.sort()` and `.reverse()` methods](#sort-and-reverse-methods)
+      - [Copy a list with `list()` *fn* and create a reveres list with `reversed()` *fn*](#copy-a-list-with-list-fn-and-create-a-reveres-list-with-reversed-fn)
+      - [Creating a sorted list with `sorted()` *fn*](#creating-a-sorted-list-with-sorted-fn)
 
 ## 3.3 List Slicing
 
@@ -59,4 +66,136 @@ TODO TOC
   [0, 2, 4]
   >>> zero2nine[1:6:2]
   [1, 3, 5]  
+  ```
+
+- Exercise 3.3.1 - Slicing with *strings* and *lists*
+
+  ``` Python
+  >>> zero2nine = list(range(0, 10))
+  >>> zero2nine[3:len(zero2nine)-2]
+  [3, 4, 5, 6, 7]
+  >>>
+  >>> animals = "ant bat cat"
+  >>> animals[3:7]
+  ' bat'
+  >>> animals[4:7]
+  'bat'
+  >>>   
+  ```
+
+## 3.4 More List Techniques
+
+- see [hartl](../README.md#hartl) p.77
+
+### 3.4.1 Element Inclusion
+
+- As with [*strings*](../chp002.strings//README.002.03.md#find-method-and-in-operator), *lists* support testing for element inclusion using the [`in`](https://python-reference.readthedocs.io/en/latest/docs/operators/in.html) operator:
+  
+  ``` Python
+  # `in` with strings
+  >>> animals = "ant bat cat"
+  >>> 'dog' in animals
+  False
+  >>> 'bat' in animals
+  True
+  # `in` with strings
+  >>> animals = animals.split()
+  >>> animals
+  ['ant', 'bat', 'cat']
+  >>> 'bat' in animals
+  True
+  >>> 'dog' in animals
+  False
+  ```
+
+### 3.4.2 Sorting and Reversing
+
+- *Sorting* and *reversing* list come in two general types:
+  - *in-place* and
+  - *generators*
+
+#### `.sort()` and `.reverse()` methods
+
+- see <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>
+
+- `.sort()` and `.reverse()` **mutate** the original list:
+
+  ``` Python
+  >>> # `.reverse()`
+  >>> animals = animals.split()
+  >>> animals
+  ['ant', 'bat', 'cat']
+  >>> animals.reverse()
+  >>> animals
+  ['cat', 'bat', 'ant']
+  >>> # `.sort()` with a list of strings
+  >>> numbers = ["1", "11", "2", "23", "3", "31"]
+  >>> numbers
+  ['1', '11', '2', '23', '3', '31']
+  >>> numbers.sort()
+  >>> numbers
+  ['1', '11', '2', '23', '3', '31']
+  >>> # `.sort()` with a list of numbers
+  >>> numbers = [1, 11, 2, 23, 3, 31]
+  >>> numbers
+  [1, 11, 2, 23, 3, 31]
+  >>> numbers.sort()
+  >>> numbers
+  [1, 2, 3, 11, 23, 31]
+
+#### `.copy()`
+
+- see <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>
+
+- `.copy()` returns a **shallow copy** of a *list*
+
+  ``` Python
+  # `.copy()`
+  >>> origin = ["ant", "bat", "cat"]
+  >>> alias = origin
+  >>> alias.reverse()
+  >>> origin
+  ['cat', 'bat', 'ant']
+  >>> copy = origin.copy()
+  >>> copy
+  ['cat', 'bat', 'ant']
+  >>> copy.reverse()
+  >>> copy
+  ['ant', 'bat', 'cat']
+  # ☝ `origin` is unchanged!
+  >>> origin
+  ['cat', 'bat', 'ant']
+  ```
+
+#### Copy a list with `list()` *fn* and create a reveres list with `reversed()` *fn*
+
+- see <https://docs.python.org/3/library/functions.html#reversed>
+  
+  ``` Python
+  >>> origin = ["ant", "bat", "cat"]
+  >>> anotherCopy = list(origin)
+  # `reversed()` returns an iterator; 
+  # to create a list from the iterator call `list()`
+  >>> anotherCopyReversed = list(reversed(anotherCopy))
+  >>> anotherCopy = anotherCopy[1:3]
+  >>> anotherCopy
+  ['bat', 'cat']
+  >>> anotherCopyReversed
+  ['cat', 'bat', 'ant']
+  >>> origin
+  ['ant', 'bat', 'cat']
+  ```
+
+#### Creating a sorted list with `sorted()` *fn*
+
+- see <https://docs.python.org/3/library/functions.html#sorted>
+
+  ``` Python
+  >>> anotherCopyReversed
+  ['cat', 'bat', 'ant']
+  >>> origin
+  ['ant', 'bat', 'cat']
+  # `sorted()` returns a list and not an iterator like `reversed()`
+  >>> sorted(anotherCopyReversed)
+  ['ant', 'bat', 'cat']
   ```
