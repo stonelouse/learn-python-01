@@ -6,10 +6,16 @@
     - [Slicing using extended index syntax](#slicing-using-extended-index-syntax)
   - [3.4 More List Techniques](#34-more-list-techniques)
     - [3.4.1 Element Inclusion](#341-element-inclusion)
-    - [3.4.2 Sorting and Reversing](#342-sorting-and-reversing)
+    - [3.4.2 Sorting, Reversing, and Comparison](#342-sorting-reversing-and-comparison)
       - [`.sort()` and `.reverse()` methods](#sort-and-reverse-methods)
       - [Copy a list with `list()` *fn* and create a reveres list with `reversed()` *fn*](#copy-a-list-with-list-fn-and-create-a-reveres-list-with-reversed-fn)
       - [Creating a sorted list with `sorted()` *fn*](#creating-a-sorted-list-with-sorted-fn)
+      - [Comparison](#comparison)
+        - [Equality and Inequality](#equality-and-inequality)
+        - [`is` tests if its the **same object**](#is-tests-if-its-the-same-object)
+        - [PEP 8: When comparing with `None` use always `is`](#pep-8-when-comparing-with-none-use-always-is)
+    - [3.4.3 Appending and Popping](#343-appending-and-popping)
+  - [… `.appends()` add an element to the end of the list and returns `None`.](#-appends-add-an-element-to-the-end-of-the-list-and-returns-none)
 
 ## 3.3 List Slicing
 
@@ -108,7 +114,7 @@
   False
   ```
 
-### 3.4.2 Sorting and Reversing
+### 3.4.2 Sorting, Reversing, and Comparison
 
 - *Sorting* and *reversing* list come in two general types:
   - *in-place* and
@@ -199,3 +205,101 @@
   >>> sorted(anotherCopyReversed)
   ['ant', 'bat', 'cat']
   ```
+
+#### Comparison
+
+##### Equality and Inequality
+
+- see [hartl](../README.md#hartl) p.79
+
+- Lists support some basic equality and inequality comparisons like strings:
+
+  ``` Python
+  >>> a = [1, 2, 3]
+  >>> b = [1, 2, 3]
+  >>> a == b
+  True
+  >>> a != b
+  False
+  >>>
+  ```
+
+##### `is` tests if its the **same object**
+
+- Python also supports [`is`](https://docs.python.org/3/library/operator.html#operator.is_) which tests **object identity**.
+
+  ``` Python
+  # …
+  >>> c = a
+  >>> a is b
+  False
+  >>> a is c
+  True
+  ```
+
+##### PEP 8: When comparing with `None` use always `is`
+
+- According to [PEP 8](https://peps.python.org/pep-0008/#programming-recommendations)  
+  > Comparisons to singletons like `None` should always be done with **`is`** or **`is not`**,  
+  … **NEVER** the *equality operators*.
+
+- The [`None`](https://docs.python.org/3/c-api/none.html) object is a *singleton* and denotes **lack of value**.
+
+  ``` Python
+  >>> a = [3, 2, 1]
+  >>> a is None # ☝ Pythonic
+  False
+  >>> a.sort() is None
+  True
+  >>> a
+  [1, 2, 3]
+  >>> a.reverse() == None # ☝ NOT Pythonic
+  True
+  >>> a
+  [3, 2, 1]
+  ```
+
+### 3.4.3 Appending and Popping
+
+- see [hartl](../README.md#hartl) p.79
+
+- Append and remove elements to the end of a list with the Methods [`.append()`](https://docs.python.org/3/tutorial/datastructures.html#data-structures) and [`pop()`](https://docs.python.org/3/tutorial/datastructures.html#data-structures):
+
+- Note:  
+  … `.pop()` returns the value of the final element or the value at the specified index while **removing** it as a side effect.
+  … `.appends()` add an element to the end of the list and returns `None`.
+- 
+
+  ``` Python
+  >>> a = sorted([9, 1, 3])
+  >>> a
+  [1, 3, 9]
+  >>> a.append(42)
+  >>> a
+  [1, 3, 9, 42]
+  >>> a.append(True)
+  >>> a
+  [1, 3, 9, 42, True]
+  >>> a. append("Foo")
+  >>> a
+  [1, 3, 9, 42, True, 'Foo']
+  >>> foo = a.pop()
+  >>> foo
+  'Foo'
+  >>> a.append(foo) is None
+  True
+  >>> fourtytwo = a.pop(3)
+  >>> fourtytwo
+  42  
+  >>> a
+  [1, 3, 9, True, 'Foo']
+  >>> 
+  >>> a.pop(42)
+  Traceback (most recent call last):
+    File "<python-input-46>", line 1, in <module>
+      a.pop(42)
+      ~~~~~^^^^
+  IndexError: pop index out of range
+  ```
+
+
