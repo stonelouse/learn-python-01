@@ -16,6 +16,7 @@
         - [PEP 8: When comparing with `None` use always `is`](#pep-8-when-comparing-with-none-use-always-is)
     - [3.4.3 Appending and Popping](#343-appending-and-popping)
   - [… `.appends()` add an element to the end of the list and returns `None`.](#-appends-add-an-element-to-the-end-of-the-list-and-returns-none)
+- [3.4.4 Undoing a `Split` - `Join`](#344-undoing-a-split---join)
 
 ## 3.3 List Slicing
 
@@ -302,4 +303,30 @@
   IndexError: pop index out of range
   ```
 
+# 3.4.4 Undoing a `Split` - `Join` 
 
+- see [hartl](../README.md#hartl) p.79
+
+- Using a **generator expression** that returns `str(e)` for each element in the list
+
+  ``` Python
+  >>> a = "To be or not to be".split() # splits the string into a list of strings
+  >>> a
+  ['To', 'be', 'or', 'not', 'to', 'be']
+  >>> "".join(a) # joins the string elements of a list to a string
+  'Tobeornottobe'
+  >>> " ".join(a) # the string providing this method serves as separator
+  'To be or not to be'
+  >>> a.insert(3, 42) # inserts an element at index
+  >>> a
+  ['To', 'be', 'or', 42, 'not', 'to', 'be']
+  >>> " ".join(a) # str.join expects only strings
+  Traceback (most recent call last):
+    File "<python-input-18>", line 1, in <module>
+      " ".join(a)
+      ~~~~~~~~^^^
+  TypeError: sequence item 3: expected str instance, int found
+  # ☝ Using a generator expression that returns str(e) for each element in the list
+  >>> " ".join(str(e) for e in a)
+  'To be or 42 not to be'  
+  ```
