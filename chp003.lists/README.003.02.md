@@ -15,10 +15,11 @@
         - [`is` tests if its the **same object**](#is-tests-if-its-the-same-object)
         - [PEP 8: When comparing with `None` use always `is`](#pep-8-when-comparing-with-none-use-always-is)
     - [3.4.3 Appending and Popping](#343-appending-and-popping)
-  - [… `.appends()` add an element to the end of the list and returns `None`.](#-appends-add-an-element-to-the-end-of-the-list-and-returns-none)
-- [3.4.4 Undoing a `Split` - `Join`](#344-undoing-a-split---join)
+    - [3.4.4 Undoing a `Split` - `Join`](#344-undoing-a-split---join)
 
 ## 3.3 List Slicing
+
+- continued see [hartl](../README.md#hartl) p.75
 
 - *Slicing* allows to access multiple elements at a time.
 
@@ -269,7 +270,6 @@
 - Note:  
   … `.pop()` returns the value of the final element or the value at the specified index while **removing** it as a side effect.
   … `.appends()` add an element to the end of the list and returns `None`.
-- 
 
   ``` Python
   >>> a = sorted([9, 1, 3])
@@ -303,7 +303,7 @@
   IndexError: pop index out of range
   ```
 
-# 3.4.4 Undoing a `Split` - `Join` 
+### 3.4.4 Undoing a `Split` - `Join`
 
 - see [hartl](../README.md#hartl) p.79
 
@@ -329,4 +329,47 @@
   # ☝ Using a generator expression that returns str(e) for each element in the list
   >>> " ".join(str(e) for e in a)
   'To be or 42 not to be'  
+  ```
+
+- Exercise 3.4.5
+
+  - 1. `list.sort(reverse=True)` and `sorted(reverse=True)`
+
+  ``` Python
+  >>> a = [9, 5, 7, 1, 3]
+  >>> a1 = a.copy()
+  >>> a1.sort(reverse=True)
+  >>> a1
+  [9, 7, 5, 3, 1]
+  >>> a2 = a.copy()
+  >>> sorted(a, reverse=True)
+  [9, 7, 5, 3, 1]
+  ```
+
+  - 1. `list.insert(i, x)`
+
+  ``` Python
+  >>> a2.insert(0, 11)
+  >>> a2
+  [11, 9, 5, 7, 1, 3]
+  ```
+
+  - 1. `list.extend(iterable)`
+
+  ``` Python
+  >>> a = ['a', 'b', 'c']
+  >>> b = ['d', 'e', 'f']
+  >>> a1 = a.copy()
+  >>> a1.extend(b)
+  >>> a1
+  ['a', 'b', 'c', 'd', 'e', 'f'] # a1 was mutated
+  >>> a
+  ['a', 'b', 'c']
+  >>> b
+  ['d', 'e', 'f']
+  >>> a2 = a.copy()
+  >>> a2[len(a2):] = b  # a2 was mutated
+  >>> a2 
+  ['a', 'b', 'c', 'd', 'e', 'f']
+  >>> 
   ```
