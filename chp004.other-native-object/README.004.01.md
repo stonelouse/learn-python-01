@@ -7,7 +7,6 @@
   - [Retrieving the result of the previously executed command in REPL - "**`_`**"](#retrieving-the-result-of-the-previously-executed-command-in-repl---_)
   - [Importing specific items from a module](#importing-specific-items-from-a-module)
 
-
 ## 4.1 Math
 
 - see [hartl](../README.md#hartl) p.91
