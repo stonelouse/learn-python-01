@@ -150,3 +150,22 @@
   ```
 
   This carries a **high risk of (*name*) collisions**!
+
+- Exercise 4.1.3
+
+  ``` Python
+  >>> float("1.24e6")
+  1240000.0
+  >>> str(_)
+  '1240000.0'
+  >>> int(6.28) == int(6.98)
+  True
+  >>>
+  >>> from math import floor
+  >>> x = floor(6.28)
+  >>> x
+  6   
+  >>> y = floor(6.98)
+  >>> y
+  6
+  ```
