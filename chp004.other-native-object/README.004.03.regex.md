@@ -66,3 +66,51 @@
   >>> "ant bat  cat\tduck".split()
   ['ant', 'bat', 'cat', 'duck']
   ```
+
+- Exercise 4.3.2
+
+  ``` Python
+  >>> # exercise 4.3.2.1
+  >>> zip_extended = r"\d{5}-\d{4}"
+  >>> import re
+  >>> re.search(zip_extended, "10118-0110")
+  <re.Match object; span=(0, 10), match='10118-0110'>
+  >>> re.search(zip_extended, "10118_0110")
+  >>> re.search(zip_extended, "10118_0110") == None
+  True
+  >>> re.search(zip_extended, "10118-110") == None
+  True
+  >>> re.search(zip_extended, "1011-0110") == None
+  True
+  >>> re.search(zip_extended, "1011-01109") == None
+  True
+  >>> re.search(zip_extended, "10119-0110") == None
+  False
+  >>> re.search(zip_extended, "a0119-0110") == None
+  True
+  >>> re.search(zip_extended, "10119-011b") == None
+  True
+  ```
+
+  ``` Python
+  >>> # exercise 4.3.2.2
+  >>> poem = """Let me not to the marriage of true minds
+  ... Admit impediments. Love is not love
+  ... Which alters when it alteration finds,
+  ... Or bends with the remover to remove.
+  ... O no, it is an ever-fixed mark
+  ... That looks on tempests and is never shaken
+  ... It is the star to every wand'ring bark,
+  ... Whose worth's unknown, although his height be taken.
+  ... Love's not time's fool, though rosy lips and cheeks
+  ... Within his bending sickle's compass come:
+  ... Love alters not with his brief hours and weeks,
+  ... But bears it out even to the edge of doom.
+  ...     If this be error and upon me proved,
+  ...     I never writ, nor no man ever loved."""
+  >>> re.split(r"\n", poem)
+  ['Let me not to the marriage of true minds', 'Admit impediments. Love is not love', 'Which alters when it alteration finds,', 'Or bends with the remover to remove.', 'O no, it is an ever-fixed mark', 'That looks on tempests and is never shaken', "It is the star to every wand'ring bark,", "Whose worth's unknown, although his height be taken.", "Love's not time's fool, though rosy lips and cheeks", "Within his bending sickle's compass come:", 'Love alters not with his brief hours and weeks,', 'But bears it out even to the edge of doom.', '    If this be error and upon me proved,', '    I never writ, nor no man ever loved.']
+  >>> len(re.split(r"\n", poem)) == 14
+  True
+  >>>
+  ```
