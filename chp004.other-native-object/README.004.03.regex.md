@@ -15,7 +15,7 @@
   ``` Python
   >>> zip_code = r"\d{5}" # a raw string
   ```
- 
+
 ### `re` module
 
 - `re` module provides a `search()` function which is useful in a boolean context
@@ -38,9 +38,9 @@
 - Finding all string matches with `re.findall()`
 
   ``` Python
-  >>> s = "Beverly Hills 90210 was a '90s TV show set in Los Angeles. 91125 is another ZIP code in the Los Angelas area"
+  >>> s = "Beverly Hills 90210 was a '90s TV show set in Los Angeles. 91125 is another ZIP code in the Los Angeles' area"
   >>> s
-  "Beverly Hills 90210 was a '90s TV show set in Los Angeles. 91125 is another ZIP code in the Los Angelas area"
+  "Beverly Hills 90210 was a '90s TV show set in Los Angeles. 91125 is another ZIP code in the Los Angeles area"
   >>> import re
   >>> re.findall(zip_code, s)
   ['90210', '91125']
@@ -48,4 +48,21 @@
   # Finding all multi-letter words that are ALL CAPS
   >>> re.findall(r"[A-Z]{2,}", s)
   ['TV', 'ZIP']
+  ```
+
+- Splitting with `re.split()` *fn*
+
+  ``` Python
+  >>> "ant bat cat duck".split(" ")
+  ['ant', 'bat', 'cat', 'duck']
+  >>> "ant bat  cat   duck".split(" ")
+  ['ant', 'bat', '', 'cat', '', '', 'duck']
+  >>> import re
+  >>> re.split(r"\s+", "ant bat  cat   duck")
+  ['ant', 'bat', 'cat', 'duck']
+  # By default, .split() called without argument splits on whitespace automatically
+  >>> "ant bat  cat   duck".split()
+  ['ant', 'bat', 'cat', 'duck']
+  >>> "ant bat  cat\tduck".split()
+  ['ant', 'bat', 'cat', 'duck']
   ```
