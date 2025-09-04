@@ -1,6 +1,10 @@
 # 4. Other Native Objects
 
-- TODO
+- [4. Other Native Objects](#4-other-native-objects)
+  - [4.3 Regular Expressions - *regex*](#43-regular-expressions---regex)
+    - [Creating a *regex*](#creating-a-regex)
+    - [`re` module](#re-module)
+
 
 ## 4.3 Regular Expressions - *regex*
 
