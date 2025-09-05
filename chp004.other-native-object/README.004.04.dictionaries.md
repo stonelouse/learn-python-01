@@ -7,6 +7,11 @@
     - [Literal curly braces syntax](#literal-curly-braces-syntax)
     - [Using `dict()` *fn* to create dictionaries](#using-dict-fn-to-create-dictionaries)
     - [`.keys()` and `.values()`](#keys-and-values)
+  - [4.4.1 Dictionary Iteration](#441-dictionary-iteration)
+    - [`dict.items()`](#dictitems)
+  - [4.4.2 Merging dictionaries](#442-merging-dictionaries)
+    - [Strange-looking `**` syntax and *pipe* operator](#strange-looking--syntax-and-pipe-operator)
+    - [Applying `enumerate()` to `dict.items()`](#applying-enumerate-to-dictitems)
 
 ## 4.4 Dictionaries
 
@@ -141,3 +146,127 @@
   >>> "John Doe" in moonwalks
   False
   ```
+
+## 4.4.1 Dictionary Iteration
+
+- continued see [hartl](../README.md#hartl) p.112
+
+- As with lists, tuples, and sets, one of the most common dictionary tasks is iterating over elements.
+
+  ``` Python
+  >>> moonwalks = {
+  ... "Neil Armstrong": 1969,
+  ... "Buzz Aldrin": 1969,
+  ... "Alan Shepard": 1971,
+  ... "Eugene Cernan": 1972,
+  ... "Michael Jackson": 1983
+  ... }
+  >>> for key in moonwalks.keys():    # NOT Pythonic
+  ...     print(f"{key} first performed a moonwalk in {moonwalks[key]}.")
+  ...     
+  Neil Armstrong first performed a moonwalk in 1969. 
+  Buzz Aldrin first performed a moonwalk in 1969.    
+  Alan Shepard first performed a moonwalk in 1971.   
+  Eugene Cernan first performed a moonwalk in 1972.  
+  Michael Jackson first performed a moonwalk in 1983.
+  ```
+
+- Iterating over keys is the default
+
+  ``` Python
+  >>> for key in moonwalks: # Somewhat Pythonic; iterating over keys is the default
+  ...     print(f"{key} first performed a moonwalk in {moonwalks[key]}.")
+  ... 
+  Neil Armstrong first performed a moonwalk in 1969.
+  Buzz Aldrin first performed a moonwalk in 1969.
+  Alan Shepard first performed a moonwalk in 1971.
+  Eugene Cernan first performed a moonwalk in 1972.
+  Michael Jackson first performed a moonwalk in 1983.
+  ```
+
+### `dict.items()`
+
+- [**`dict.items()`**](https://docs.python.org/3/library/stdtypes.html#dict.items) returns a new [view](https://docs.python.org/3/library/stdtypes.html#dict-views) of dictionary items.
+
+  ``` Python
+  >>> moonwalks.items()
+  dict_items([('Neil Armstrong', 1969), ('Buzz Aldrin', 1969), ('Alan Shepard', 1971), ('Eugene Cernan', 1972), ('Michael Jackson', 1983)])
+  >>> type(moonwalks.items())
+  <class 'dict_items'>
+  >>> for name, year in moonwalks.items(): # Very Pythonic
+  ...     print(f"{name} first performed a moonwalk in {year}.")
+  ... 
+  Neil Armstrong first performed a moonwalk in 1969.
+  Buzz Aldrin first performed a moonwalk in 1969.
+  Alan Shepard first performed a moonwalk in 1971.
+  Eugene Cernan first performed a moonwalk in 1972.
+  Michael Jackson first performed a moonwalk in 1983.
+  ```
+
+## 4.4.2 Merging dictionaries
+
+- continued see [hartl](../README.md#hartl) p.113
+
+- One common operation is merging dictionaries, where the elements of two dictionaries
+are combined into one.
+
+### Strange-looking `**` syntax and *pipe* operator
+
+- Two ways to merge dictionaries
+
+  ``` Python
+  >>> dict1 = {
+  ...   "one": 1, "two": 2, "three": 3
+  ... }
+  >>> dict2 = {
+  ...   "four": "FOUR", "two": "TWO", "five": "FIVE"
+  ... }
+  >>> merge1 = {**dict1, **dict2} # Kind of Pythonic; pretty strange-looking syntax
+  >>> merge1
+  {'one': 1, 'two': 'TWO', 'three': 3, 'four': 'FOUR', 'five': 'FIVE'}
+  >>> merge2 = dict1 | dict2 # Very Pythonic
+  >>> merge2
+  {'one': 1, 'two': 'TWO', 'three': 3, 'four': 'FOUR', 'five': 'FIVE'}
+  >>> merge3 = dict2 | dict1
+  # value of key `two` is different now
+  >>> merge3
+  {'four': 'FOUR', 'two': 2, 'five': 'FIVE', 'one': 1, 'three': 3} 
+  >>>
+  ```
+
+- Exercise 4.4.3.1
+
+  ``` Python
+  user = {
+  ...     "username": "John Doe",
+  ...     "password": "secret",
+  ...     "password_confirmation": "secret"
+  ... }
+  >>> if (user["password"] == user["password_confirmation"]):
+  ...     print(f"The settings for {user["username"]} are correct")
+  ... else:
+  ...     print(f"The settings for {user["username"]} not are correct")
+  ...     
+  The settings for John Doe are correct
+  >>>
+  ```
+
+### Applying `enumerate()` to `dict.items()`
+
+- Exercise 4.4.3.2
+
+- It's possible to apply [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) *fn* to [`dict.items()`](#dictitems)
+
+  ``` Python
+  >>> for i, (name, year) in enumerate(moonwalks.items()):
+  ...     print(f"{i+1}. {name} first performed a moonwalk in {year}")
+  ...     
+  1. Neil Armstrong first performed a moonwalk in 1969 
+  2. Buzz Aldrin first performed a moonwalk in 1969    
+  3. Alan Shepard first performed a moonwalk in 1971   
+  4. Eugene Cernan first performed a moonwalk in 1972  
+  5. Michael Jackson first performed a moonwalk in 1983
+  >>>
+  ```
+
+- Exercise 4.4.3.2 see [above](#442-merging-dictionaries)
