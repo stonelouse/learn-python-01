@@ -5,7 +5,6 @@
     - [Creating a *regex*](#creating-a-regex)
     - [`re` module](#re-module)
 
-
 ## 4.3 Regular Expressions - *regex*
 
 - continued see [hartl](../README.md#hartl) p.103

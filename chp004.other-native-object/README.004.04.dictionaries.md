@@ -7,10 +7,10 @@
     - [Literal curly braces syntax](#literal-curly-braces-syntax)
     - [Using `dict()` *fn* to create dictionaries](#using-dict-fn-to-create-dictionaries)
     - [`.keys()` and `.values()`](#keys-and-values)
-  - [4.4.1 Dictionary Iteration](#441-dictionary-iteration)
-    - [`dict.items()`](#dictitems)
-  - [4.4.2 Merging dictionaries](#442-merging-dictionaries)
-    - [Strange-looking `**` syntax and *pipe* operator](#strange-looking--syntax-and-pipe-operator)
+    - [4.4.1 Dictionary Iteration](#441-dictionary-iteration)
+      - [`dict.items()`](#dictitems)
+    - [4.4.2 Merging dictionaries](#442-merging-dictionaries)
+      - [Strange-looking `**` syntax and *pipe* operator](#strange-looking--syntax-and-pipe-operator)
     - [Applying `enumerate()` to `dict.items()`](#applying-enumerate-to-dictitems)
 
 ## 4.4 Dictionaries
@@ -147,7 +147,7 @@
   False
   ```
 
-## 4.4.1 Dictionary Iteration
+### 4.4.1 Dictionary Iteration
 
 - continued see [hartl](../README.md#hartl) p.112
 
@@ -184,7 +184,7 @@
   Michael Jackson first performed a moonwalk in 1983.
   ```
 
-### `dict.items()`
+#### `dict.items()`
 
 - [**`dict.items()`**](https://docs.python.org/3/library/stdtypes.html#dict.items) returns a new [view](https://docs.python.org/3/library/stdtypes.html#dict-views) of dictionary items.
 
@@ -203,14 +203,14 @@
   Michael Jackson first performed a moonwalk in 1983.
   ```
 
-## 4.4.2 Merging dictionaries
+### 4.4.2 Merging dictionaries
 
 - continued see [hartl](../README.md#hartl) p.113
 
 - One common operation is merging dictionaries, where the elements of two dictionaries
 are combined into one.
 
-### Strange-looking `**` syntax and *pipe* operator
+#### Strange-looking `**` syntax and *pipe* operator
 
 - Two ways to merge dictionaries
 

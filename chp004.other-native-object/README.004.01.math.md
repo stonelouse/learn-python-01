@@ -3,7 +3,7 @@
 - [4. Other Native Objects](#4-other-native-objects)
   - [4.1 Math](#41-math)
     - [4.1.1 More Advanced Operations](#411-more-advanced-operations)
-  - [4.1.2 Math to String – `str()`, `int()`, `float()`, (and `map()`)](#412-math-to-string--str-int-float-and-map)
+    - [4.1.2 Math to String – `str()`, `int()`, `float()`, (and `map()`)](#412-math-to-string--str-int-float-and-map)
   - [Retrieving the result of the previously executed command in REPL - "**`_`**"](#retrieving-the-result-of-the-previously-executed-command-in-repl---_)
   - [Importing specific items from a module](#importing-specific-items-from-a-module)
 
@@ -76,7 +76,7 @@
   6.0 
   ```
 
-## 4.1.2 Math to String – `str()`, `int()`, `float()`, (and `map()`)
+### 4.1.2 Math to String – `str()`, `int()`, `float()`, (and `map()`)
 
 - [`str()`](https://docs.python.org/3/library/functions.html#func-str), [`int()`](https://docs.python.org/3/library/functions.html#int), [`float()`](https://docs.python.org/3/library/functions.html#float) and [`map()`](https://docs.python.org/3/library/functions.html#map) in action
 
