@@ -1,8 +1,7 @@
-- [5. Functions and Iterators](#5-functions-and-iterators)
-  - [Function Definitions](#function-definitions)
 # 5. Functions and Iterators
 
-
+- [5. Functions and Iterators](#5-functions-and-iterators)
+  - [Function Definitions](#function-definitions)
 
 ## Function Definitions
 
