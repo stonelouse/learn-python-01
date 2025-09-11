@@ -5,6 +5,7 @@
     - [hartl](#hartl)
   - [Links](#links)
     - [PEP 8](#pep-8)
+    - [Some Python Doc Sides](#some-python-doc-sides)
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
     - [Notable differences between Python and most other languages](#notable-differences-between-python-and-most-other-languages)
@@ -26,6 +27,13 @@
 ### PEP 8
 
 - [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
+
+### Some Python Doc Sides
+
+- [Built-in Functions | docs](https://docs.python.org/3/library/functions.html)
+- [Built-in Types | docs](https://docs.python.org/3/library/stdtypes.html)
+- [5. Data Structures | docs](https://docs.python.org/3/tutorial/datastructures.html)
+- [8. Compound statements | docs](https://docs.python.org/3/reference/compound_stmts.html)
 
 ## Notes
 
