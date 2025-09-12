@@ -1,9 +1,14 @@
 # 5. Functions and Iterators
 
 - [5. Functions and Iterators](#5-functions-and-iterators)
-  - [Function Definitions](#function-definitions)
+  - [5.1 Function Definitions](#51-function-definitions)
+    - [*docstring* and `help()` *fn*](#docstring-and-help-fn)
+    - [5.1.1 First Class Functions](#511-first-class-functions)
+      - [Assign functions to variables](#assign-functions-to-variables)
+      - [Pass a function as arguments to a function](#pass-a-function-as-arguments-to-a-function)
+      - [A function can return a function](#a-function-can-return-a-function)
 
-## Function Definitions
+## 5.1 Function Definitions
 
 - continued see [hartl](../README.md#hartl) p.120
 
@@ -80,4 +85,93 @@
   ... 
   >>> day_name(now)
   'Thursday'
+  ```
+
+### *docstring* and `help()` *fn*
+
+- A **docstring** follows immediately after the *`def`* keyword, the *function name* and any *arguments*.  
+
+- The *docstring* typically use the imperative mood, so  
+  … *"Return the name"* rather than *"Returns the name"*.
+
+- The *docstring* is shown via the [**`help()`**](https://docs.python.org/3/library/functions.html#help) *fn*
+
+  ``` Python
+  >>> import calendar
+  >>> from datetime import datetime
+  >>> def day_name(datetime):
+  ...     """ Return the name of the day of the week for the passed `datetime`"""
+  ...     return calendar.day_name[datetime.weekday()]
+  ...     
+  >>> help(day_name)
+  Help on function day_name in module __main__:
+
+  day_name(datetime)
+      Return the name of the day of the week for the passed `datetime`
+
+  >>>
+  ```
+
+- Then, there's a *function body*, which determines the *return value* of the function using the *`return`* keyword.
+
+- Finally, the function is **ended by a *newline***.
+
+### 5.1.1 First Class Functions
+
+- continued see [hartl](../README.md#hartl) p.126
+
+- Python *functions* **can be treated as regular variables** in many ways (*first-class objects*).
+
+#### Assign functions to variables
+
+- We can assign a function to a variable and are able to call it via the variable
+
+  ``` Python
+  >>> def square(x):
+  ...     return x * x
+  ... 
+  >>> pow2 = square
+  >>> pow2(4)
+  16
+  ```
+
+#### Pass a function as arguments to a function
+
+- We can pass functions as arguments to other functions.
+
+  ``` Python
+  >>> def inc(x, f):
+  ...     return f(x) + 1
+  ...     
+  >>> inc(4, square)
+  17
+  >>> inc(4, pow2)
+  17
+  ```
+
+#### A function can return a function
+
+- A function can return another function
+
+  ``` Python
+  >>> def inc_by_1(x):
+  ...     return x + 1
+  ...     
+  >>> def inc_by_2(x):
+  ...     return x + 2
+  ...     
+  >>> def inc_by_4(x):
+  ...     return x + 4
+  ...     
+  >>> def incer(y):
+  ...     if (y == 4): return inc_by_4
+  ...     elif (y == 2): return inc_by_2
+  ...     else: return inc_by_1
+  ...     
+  >>> print(incer(1)(42))
+  43  
+  >>> print(incer(2)(42))
+  44  
+  >>> print(incer(4)(42))
+  46
   ```
