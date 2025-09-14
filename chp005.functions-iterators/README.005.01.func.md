@@ -7,6 +7,9 @@
       - [Assign functions to variables](#assign-functions-to-variables)
       - [Pass a function as arguments to a function](#pass-a-function-as-arguments-to-a-function)
       - [A function can return a function](#a-function-can-return-a-function)
+    - [5.1.2 Variable and Keyword Arguments](#512-variable-and-keyword-arguments)
+      - [star args - `*args`](#star-args---args)
+      - [star star kwargs - **`**kwargs`**](#star-star-kwargs---kwargs)
 
 ## 5.1 Function Definitions
 
@@ -174,4 +177,76 @@
   44  
   >>> print(incer(4)(42))
   46
+  ```
+
+### 5.1.2 Variable and Keyword Arguments
+
+- continued see [hartl](../README.md#hartl) p.128
+
+#### star args - `*args`
+
+- Passing a variable number of arguments via `*args`
+
+  ``` Python
+  >>> def bar(*args):
+  ...     print(args)
+  ...     return type(args)
+  ... 
+  >>> bar ("This", "is", "the", "end")
+  ('This', 'is', 'the', 'end')
+  <class 'tuple'>
+  >>> 
+  ```
+
+  Python creates a *tuple* of the arguments automatically,  
+  ... which works for any number.
+
+#### star star kwargs - **`**kwargs`**
+
+- Passing a variable number of *key-value* pairs as arguments via `**kwargs`
+
+  ``` Python
+  >>> def foo(**kwargs):
+  ...     print(kwargs)
+  ...     return type(kwargs)
+  ... 
+  >>> foo(a='One', b='Two', c='Three')
+  {'a': 'One', 'b': 'Two', 'c': 'Three'}
+  <class 'dict'>
+  >>> foo(one='1', two='2', three='3')
+  {'one': '1', 'two': '2', 'three': '3'}
+  <class 'dict'>
+  >>> foo(1='1', 2='2', 3='3')
+    File "<stdin>", line 1
+      foo(1='1', 2='2', 3='3')
+  SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+  ```
+
+- Python creates a *dictionary* of the passed *key-value* pairs.
+
+- Example 5.1.3.2
+
+  ``` Python
+  >>> def deriver(f, x):
+  ...     h = 0.00001
+  ...     return (f(x+h) - f(x))/h
+  ... 
+  >>> def square(x):
+  ...     return x*x
+  ... 
+  >>> deriver(square, 3)
+  6.000009999951316
+  >>> 
+  ```
+
+- Example 5.1.3.3
+
+  ``` Python
+  >>> def foo(*args, **kwargs):
+  ...     print(args)
+  ...     print(kwargs)
+  ... 
+  >>> foo("This" "is a bunch", "of arguments", "to the function", a="hello", b="world", bar="good day!")
+  ('Thisis a bunch', 'of arguments', 'to the function')
+  {'a': 'hello', 'b': 'world', 'bar': 'good day!'}
   ```
