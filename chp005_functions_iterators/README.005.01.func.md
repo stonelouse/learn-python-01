@@ -10,6 +10,7 @@
     - [5.1.2 Variable and Keyword Arguments](#512-variable-and-keyword-arguments)
       - [star args - `*args`](#star-args---args)
       - [star star kwargs - **`**kwargs`**](#star-star-kwargs---kwargs)
+  - [5.2 Functions in a file](#52-functions-in-a-file)
 
 ## 5.1 Function Definitions
 
@@ -250,3 +251,46 @@
   ('Thisis a bunch', 'of arguments', 'to the function')
   {'a': 'hello', 'b': 'world', 'bar': 'good day!'}
   ```
+
+## 5.2 Functions in a file
+
+- continued see [hartl](../README.md#hartl) p.130
+
+- Since `-` (*hyphen*) seems to be problematic in import pathes, I renamed the chapter folder.
+
+- Usually, we put the function definitions in a seperate file.
+
+- Using such an *external resource* requires the presence of a file called **`__init__.py`**,  
+  ... which causes Python to interpret our project directory as a **package**.  
+  ... The file doesn’t have to have any content, though—it just has to exist.
+
+- We have to **`import`** the *function* the same way that we imported `datetime`, and `calendar`
+
+  ``` Python
+  # chp005_functions_iterators/package/p005_01_day.py
+  from datetime import datetime
+  from calendar import day_name
+
+  def dayname(time):
+      """Return the name of the day in a week."""
+      return day_name[time.weekday()]
+  ```
+
+  ``` Python
+  # chp005_functions_iterators/p005.01.greet.py
+  # user@ideapad:~/home_rus/learn-python-01/chp005_functions_iterators$ python3 ./p005.01.greet.py 
+
+  from datetime import datetime
+
+  from package.p005_01_day import dayname
+
+
+  print(f"Today is {dayname(datetime.now())}")
+  ```
+  
+- Note that the `import` statement includes the current direc-
+tory (`package`), which is necessary because our *project directory* **isn’t** on the *Python include path by default*.
+
+- In the book example, the imports from the *standard library* (`datetime`) come first, then we import a *third-party library* (`flask`), and finally the import of the custom library follows.
+
+- By convention each section is separated by  a *newline* and from the rest of the file by *two newlines*.
