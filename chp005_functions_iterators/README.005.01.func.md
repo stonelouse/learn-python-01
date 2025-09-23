@@ -256,9 +256,9 @@
 
 - continued see [hartl](../README.md#hartl) p.130
 
-- Since `-` (*hyphen*) seems to be problematic in import pathes, I renamed the chapter folder.
+- Since `-` (*hyphen*) seems to be problematic in import paths, I renamed the chapter folder.
 
-- Usually, we put the function definitions in a seperate file.
+- Usually, we put the function definitions in a separate file.
 
 - Using such an *external resource* requires the presence of a file called **`__init__.py`**,  
   … which causes Python to interpret our project directory as a **package**.  
@@ -288,8 +288,7 @@
   print(f"Today is {dayname(datetime.now())}")
   ```
   
-- Note that the `import` statement includes the current direc-
-tory (`package`), which is necessary because our *project directory* **isn’t** on the *Python include path by default*.
+- Note that the `import` statement includes the current directory (`package`), which is necessary because our *project directory* **isn’t** on the *Python include path by default*.
 
 - In the book example, the imports from the *standard library* (`datetime`) come first, then we import a *third-party library* (`flask`), and finally the import of the custom library follows.
 
