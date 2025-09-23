@@ -5,4 +5,5 @@ def reverse(string):
 
 def is_palindrome(string):
     """Return True for a palindrome, False otherwise."""
-    return string == reverse(string)
+    string_prepared = string.lower()
+    return string_prepared == reverse(string_prepared)
