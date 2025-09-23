@@ -261,8 +261,8 @@
 - Usually, we put the function definitions in a seperate file.
 
 - Using such an *external resource* requires the presence of a file called **`__init__.py`**,  
-  ... which causes Python to interpret our project directory as a **package**.  
-  ... The file doesn’t have to have any content, though—it just has to exist.
+  … which causes Python to interpret our project directory as a **package**.  
+  … The file doesn’t have to have any content, though—it just has to exist.
 
 - We have to **`import`** the *function* the same way that we imported `datetime`, and `calendar`
 
