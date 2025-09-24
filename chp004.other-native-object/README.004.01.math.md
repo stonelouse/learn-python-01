@@ -20,11 +20,11 @@
   42  
   >>> 84 / 2
   42.0
-  >>> 84 // 2 # ☝ Integer division aka. Modulo
+  >>> 84 // 2 # ☝ Integer division
   42  
   >>> 42 / 84
   0.5 
-  >>> 42 // 84 # ☝ Integer division aka. Modulo
+  >>> 42 // 84 # ☝ Integer division
   0   
   >>> 21 * 2
   42
