@@ -6,6 +6,7 @@
   - [Links](#links)
     - [PEP 8](#pep-8)
     - [Some Python Doc Sides](#some-python-doc-sides)
+    - [Emojis](#emojis)
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
     - [Notable differences between Python and most other languages](#notable-differences-between-python-and-most-other-languages)
@@ -35,6 +36,10 @@
 - [Built-in Types | docs](https://docs.python.org/3/library/stdtypes.html)
 - [5. Data Structures | docs](https://docs.python.org/3/tutorial/datastructures.html)
 - [8. Compound statements | docs](https://docs.python.org/3/reference/compound_stmts.html)
+
+### Emojis
+
+- [emojipedia](https://emojipedia.org/)
 
 ## Notes
 
