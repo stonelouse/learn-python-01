@@ -30,6 +30,7 @@
 
 ### Some Python Doc Sides
 
+- [Index | docs](https://docs.python.org/3/genindex.html)
 - [Built-in Functions | docs](https://docs.python.org/3/library/functions.html)
 - [Built-in Types | docs](https://docs.python.org/3/library/stdtypes.html)
 - [5. Data Structures | docs](https://docs.python.org/3/tutorial/datastructures.html)
