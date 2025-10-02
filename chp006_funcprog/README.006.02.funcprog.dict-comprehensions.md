@@ -1,6 +1,9 @@
 # 6. Functional Programming
 
-- Todo
+- [6. Functional Programming](#6-functional-programming)
+  - [6.3 Dictionary Comprehensions](#63-dictionary-comprehensions)
+    - [Concrete example and an *imperative* approach](#concrete-example-and-an-imperative-approach)
+    - [*Functional approach* by applying *dictionary comprehension*](#functional-approach-by-applying-dictionary-comprehension)
 
 ## 6.3 Dictionary Comprehensions
 

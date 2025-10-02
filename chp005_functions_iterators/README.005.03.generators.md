@@ -1,6 +1,7 @@
 # 5. Functions and Iterators
 
-- TODO
+- [5. Functions and Iterators](#5-functions-and-iterators)
+  - [5.3.1 Generators](#531-generators)
 
 ## 5.3.1 Generators
 
