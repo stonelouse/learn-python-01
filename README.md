@@ -10,11 +10,14 @@
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
     - [Notable differences between Python and most other languages](#notable-differences-between-python-and-most-other-languages)
+    - [*"Literals"* vs. *Comprehensions*](#literals-vs-comprehensions)
   - [Overview](#overview)
     - [Chapter 1](#chapter-1)
     - [Chapter 2 - String Basics](#chapter-2---string-basics)
     - [Chapter 3 - Lists](#chapter-3---lists)
     - [Chapter 4 - Other Native Objects](#chapter-4---other-native-objects)
+    - [Chapter 5 - Functions and Iterators](#chapter-5---functions-and-iterators)
+    - [Chapter 6 - Functional Programming](#chapter-6---functional-programming)
 
 ## References
 
@@ -50,6 +53,39 @@
 ### Notable differences between Python and most other languages
 
 - see [hartl](#hartl) p.6
+
+### *"Literals"* vs. *Comprehensions*
+
+``` Python
+["ant", "bear", "spider"]                        # Literal list
+("ant", "bear", "spider")                        # Literal tuple
+{1, 2, 3, 3, 4, 1}                               # Literal set
+{"stop": "red", "wait": "yellow", "go": "green"} # Literal dictionary
+
+[]                                               # empty list
+()                                               # empty tuple
+{}                                               # empty dictionary
+set()                                            # empty set
+
+states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
+# List comprehension ➡️ ['north-dakota', 'south-dakota']
+["-".join(state.lower().split()) for state in states if len(state.split()) > 1]
+
+# Dictionary comprehension ➡️ {6: 'Kansas', 8: 'Nebraska'}
+{len(state): state for state in states if len(state.split()) == 1}
+
+", ".join(
+...   # Generator comprehension ➡️ 'kansas, nebraska'
+...   state.lower() for state in states if len(state.split()) == 1
+... )
+
+>>> from itertools import chain
+>>> list(chain.from_iterable([state.split() for state in states]))
+['Kansas', 'North', 'Dakota', 'Nebraska', 'South', 'Dakota']
+# Set comprehension
+>>> {element for element in list(chain.from_iterable([state.split() for state in states]))}
+{'Kansas', 'South', 'Dakota', 'Nebraska', 'North'}
+```
 
 ## Overview
 
@@ -90,3 +126,21 @@
 - [4.3 Regular Expressions](./chp004.other-native-object/README.004.03.regex.md#43-regular-expressions---regex)
 - [4.4 Dictionaries](./chp004.other-native-object/README.004.04.dictionaries.md#44-dictionaries)
 - [4.5 Application - Unique Words](./chp004.other-native-object/README.004.05.exercise.unique-words.md)
+
+### Chapter 5 - Functions and Iterators
+
+- [5.1 Function Definitions](./chp005_functions_iterators/README.005.01.func.md#51-function-definitions)
+- [5.1.1 First Class Functions](./chp005_functions_iterators/README.005.01.func.md#511-first-class-functions)
+- [5.1.2 Variable and Keyword Arguments](./chp005_functions_iterators/README.005.01.func.md#512-variable-and-keyword-arguments)
+- [5.2 Functions in a file](./chp005_functions_iterators/README.005.01.func.md#52-functions-in-a-file)
+- [5.3 Iterators](./chp005_functions_iterators/README.005.02.iterators.md#53-iterators)
+- [5.3.1 Generators](./chp005_functions_iterators/README.005.03.generators.md#531-generators)
+
+### Chapter 6 - Functional Programming
+
+- [6.1 List Comprehensions](./chp006_funcprog/README.006.01.funcprog.list-comprehensions.md#61-list-comprehensions)
+- [6..2 List Comprehensions with Conditions](./chp006_funcprog/README.006.01.funcprog.list-comprehensions.md#62-list-comprehensions-with-conditions)
+- [6.3 Dictionary Comprehensions](./chp006_funcprog/README.006.02.funcprog.dict-comprehensions.md#63-dictionary-comprehensions)
+- [6.4 Generator and Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#64-generator-and-set-comprehensions)
+- [6.4.1 Generator Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#641-generator-comprehensions)
+- [6.4.2 Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#642-set-comprehensions)
