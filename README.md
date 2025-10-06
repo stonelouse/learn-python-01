@@ -144,3 +144,4 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [6.4 Generator and Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#64-generator-and-set-comprehensions)
 - [6.4.1 Generator Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#641-generator-comprehensions)
 - [6.4.2 Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#642-set-comprehensions)
+- [6.5 Other Functional Techniques](./chp006_funcprog/README.006.04.funcprog.other-func-techniques.md)
