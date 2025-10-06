@@ -112,7 +112,7 @@
   ['Kansas', 'Nebraska']
   ```
 
-- As compact as *list comprehensions* can be, it’s worth noting that there are limitations to their use. 
+- As compact as *list comprehensions* can be, it’s worth noting that there are limitations to their use.
   
   In particular, as the *logic* inside *list comprehensions* gets **more complicated**, they can quickly become unwieldy. It is therefore considered *unPythonic* to build up *complicated list comprehensions*; if you find yourself trying to squeeze too much content into a single comprehension, consider using a good old-fashioned `for` loop instead.
 
