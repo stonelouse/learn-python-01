@@ -1,6 +1,9 @@
 class Phrase:
   """A class to represent phrases."""
 
+  def __init__(self, content):
+    self.content = content
+
 # The next line arranges
 # … to execute the subsequent code
 # … if the file is run at the command line
@@ -8,5 +11,5 @@ class Phrase:
 # … see https://docs.python.org/3/library/__main__.html
 if __name__ == "__main__":
   # creating a Phrase instance
-  phrase = Phrase()
-  print(phrase)
+  phrase = Phrase("Madam, I'm Adam")
+  print(phrase.content)
