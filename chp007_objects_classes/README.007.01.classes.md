@@ -52,7 +52,7 @@
 - `Phrase` class
 
   see `chp007_objects_classes\package\palindrome.py`  
-  commit `Todo`
+  commit `16e8620f0a93153bba12df0a527744d3fcd82c48`
 
   ``` Python
   class Phrase:
@@ -72,4 +72,66 @@
   ``` Python
   PS …\learn-python-01> python .\chp007_objects_classes\package\palindrome.py
   Madam, I'm Adam
+  ```
+
+### Assigning to an *object attribute* - *dot notation*
+
+- We can also now assign directly to the object's attribute `content`  
+  … using the **dot notation**:
+
+  see `chp007_objects_classes\package\palindrome.py`  
+  commit `89f0eb4070d24fe42f339804f1f4a7d508ad28e8`
+
+  ``` Python
+  # …
+  if __name__ == "__main__":
+    # creating a Phrase instance
+    phrase = Phrase("Madam, I'm Adam")
+    print(phrase.content)
+
+    phrase.content = "Able was I, ere I saw Elba"
+    print(phrase.content)
+  ```
+
+  ``` bash
+  …/__learn-python-01/chp007_objects_classes> python3 ./package/palindrome.py 
+  Madam, I'm Adam
+  Able was I, ere I saw Elba
+  ```
+
+### Adding the functions `reverse()` and `ispalindrome()`
+
+- Now we remove the `if __name__ == "__main__"` section and replace it with the function definitions of `reverse()` and `ispalindrome()` from `../chp005_functions_iterators/package/p005_02_is_palindrome.py`:
+
+  see `chp007_objects_classes\package\palindrome.py`  
+  commit `44c9dd62cc7a5ca2b5f52fbd2ade9bd991f9dc03`
+
+  ``` Python
+  class Phrase:
+    """A class to represent phrases."""
+
+    def __init__(self, content):
+      self.content = content
+
+  def reverse(string):
+    """Reverse a string."""
+    return "".join(reversed(string))
+
+  def ispalindrome(string):
+    """Return True for a palindrome, False otherwise."""
+    processed_content = string.lower()
+    return processed_content == reverse(processed_content)
+  ```
+
+- Then we test our changes in the REPL
+
+  ``` bash
+  …/__learn-python-01/chp007_objects_classes/package> python3
+  Python 3.13.7 (main, Sep 28 2025, 13:03:11) [GCC 7.5.0] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  Ctrl click to launch VS Code Native REPL
+  >>> import palindrome
+  >>> phrase = palindrome.Phrase("Racecar")
+  >>> palindrome.ispalindrome(phrase.content)
+  True
   ```
