@@ -13,3 +13,6 @@ if __name__ == "__main__":
   # creating a Phrase instance
   phrase = Phrase("Madam, I'm Adam")
   print(phrase.content)
+
+  phrase.content = "Able was I, ere I saw Elba"
+  print(phrase.content)
