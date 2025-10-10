@@ -135,3 +135,77 @@
   >>> palindrome.ispalindrome(phrase.content)
   True
   ```
+
+### Make a *function* to a *method*
+
+- Since `reverse()` is of potentially general utility, we'll leave it *outside* the class.
+
+  see `chp007_objects_classes\package\palindrome.py`  
+  commit `3125cc0dbfe9dafc6450cdd367abd563377159a7`
+
+  ``` Python
+  class Phrase:
+    """A class to represent phrases."""
+
+    def __init__(self, content):
+      self.content = content
+
+    def ispalindrome(self):
+      """Return True for a palindrome, False otherwise."""
+      processed_content = self.content.lower()
+      return processed_content == reverse(processed_content)
+
+  def reverse(string):
+    """Reverse a string."""
+    return "".join(reversed(string))
+  ```
+
+  Notice that inside the `ispalindrome()` method we can access the *data attribute* `content` through the parameter `self`!
+
+- Exercise 7.1.1
+
+  see `chp007_objects_classes/package/palindrome_exercise.py`
+
+  ``` bash
+  >>> import palindrom_exercise.py
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+      import platform
+  ModuleNotFoundError: No module named 'palindrom_exercise'
+  >>> import palindrom_exercise
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+      import platform
+  ModuleNotFoundError: No module named 'palindrom_exercise'
+  >>> import palindrome_exercise
+  >>> phrase = palindrome_exercise.Phrase("Racecar")
+  >>> phrase.ispalindrome()
+  True
+  >>> phrase.louder()
+  'RACECAR'
+  >>> exit()
+  user@linux:/mnt/ntfs1/home.UserRus/Documents.Notes/__learn-python-01/chp007_objects_classes/package> python3
+  >>> import importlib
+  >>> import palindrome_exercise as palindrome
+  >>> palindrome = palindrome.Phrase("Racecar")
+  >>> import palindrome_exercise as palindrome
+  >>> phrase = palindrome.Phrase("Racecar")
+  >>> phrase.ispalindrome()
+  True
+  >>> phrase.louder()
+  'RACECAR'
+  >>> # Now, `if __name__ == "__main__"` added
+  >>> importlib.reload(palindrome)
+  <module 'palindrome_exercise' from '/mnt/ntfs1/home.UserRus/Documents.Notes/__learn-python-01/chp007_objects_classes/package/palindrome_exercise.py'>
+  >>> phrase = palindrome.Phrase("Madam")
+  >>> phrase.ispalindrome()
+  True
+  >>> phrase.louder()
+  'MADAM'
+  >>> exit()
+
+  user@linux:/mnt/ntfs1/home.UserRus/Documents.Notes/__learn-python-01/chp007_objects_classes/package> python3 palindrome_exercise.py 
+  True
+  RACECAR
+  Exercise completed.  
+  ```
