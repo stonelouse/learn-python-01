@@ -18,6 +18,7 @@
     - [Chapter 4 - Other Native Objects](#chapter-4---other-native-objects)
     - [Chapter 5 - Functions and Iterators](#chapter-5---functions-and-iterators)
     - [Chapter 6 - Functional Programming](#chapter-6---functional-programming)
+    - [Chapter 7 - Objects and Classes](#chapter-7---objects-and-classes)
 
 ## References
 
@@ -145,3 +146,8 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [6.4.1 Generator Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#641-generator-comprehensions)
 - [6.4.2 Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#642-set-comprehensions)
 - [6.5 Other Functional Techniques](./chp006_funcprog/README.006.04.funcprog.other-func-techniques.md)
+
+### Chapter 7 - Objects and Classes
+
+- [7.1 Defining Classes](./chp007_objects_classes/README.007.01.classes.md#71-defining-classes)
+- [7.2 Custom Iterators](./chp007_objects_classes/README.007.02.custom-iterators.md#72-custom-iterators)

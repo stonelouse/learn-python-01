@@ -1,10 +1,15 @@
 # 7. Objects and Classes
 
-- Todo
+- [7. Objects and Classes](#7-objects-and-classes)
+  - [7.1 Defining Classes](#71-defining-classes)
+    - [Defining the `__init__` initializer function and *data attributes*](#defining-the-__init__-initializer-function-and-data-attributes)
+    - [Assigning to an *object attribute* - *dot notation*](#assigning-to-an-object-attribute---dot-notation)
+    - [Adding the functions `reverse()` and `ispalindrome()`](#adding-the-functions-reverse-and-ispalindrome)
+    - [Make a *function* to a *method*](#make-a-function-to-a-method)
 
 ## 7.1 Defining Classes
 
-- continued see [hartl](../README.md#hartl) p.1169
+- continued see [hartl](../README.md#hartl) p.169
 
 - **Classes** are defined by using the [**`class`**](https://docs.python.org/3/tutorial/classes.html#class-definition-syntax) *keyword*.
 
