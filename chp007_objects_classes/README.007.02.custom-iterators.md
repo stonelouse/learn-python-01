@@ -1,8 +1,11 @@
 # 7. Objects and Classes
 
-- Todo
+- [7. Objects and Classes](#7-objects-and-classes)
+  - [7.2 Custom Iterators](#72-custom-iterators)
 
 ## 7.2 Custom Iterators
+
+- continued see [hartl](../README.md#hartl) p.176
 
 - In this section we'll learn how to add an iterator to a custom class.
 
