@@ -6,8 +6,11 @@ class Phrase:
 
   def ispalindrome(self):
     """Return True for a palindrome, False otherwise."""
-    processed_content = self.content.lower()
-    return processed_content == reverse(processed_content)
+    return self.processed_content() == reverse(self.processed_content())
+
+  def processed_content(self):
+    """Process content for palindrome testing."""
+    return self.content.lower()
 
   def __iter__(self):
     self.phrase_iterator = iter(self.content)
@@ -15,6 +18,14 @@ class Phrase:
   
   def __next__(self):
     return next(self.phrase_iterator)
+
+class TranslatedPhrase(Phrase):
+  """A class to represent phrases with translation."""
+
+  def __init__(self, content, translation):
+    # setting `content`
+    super().__init__(content)
+    self.translation = translation
 
 def reverse(string):
   """Reverse a string."""

@@ -2,7 +2,7 @@
 
 - Todo
 
-## 7.2 Custom Iterators
+## 7.3 Inheritance
 
 - continued see [hartl](../README.md#hartl) p.179
 
@@ -80,4 +80,74 @@
   <class 'dict'>
   >>> {}.__class__.__mro__
   (<class 'dict'>, <class 'object'>)
+  ```
+
+## 7.4 Derived Class
+
+- continued see [hartl](../README.md#hartl) p.179
+
+- Now we want to derive a new class `TranslatedPhrase` from the `Phrase` class.  
+  … The purpose of this so-called **derived** class (or **subclass**) is  
+  … to **reuse** as much of `Phrase` as possible  
+  …  while giving us the **flexibility** to, say, test if a `translation` is a palindrome.
+
+- We *derive* from `Phrase` by passing the *super class*' name as argument.
+
+- Inside the `__init__` method of our *derived* class, we call Python's *special function* **`super()`**,  
+  … passing the argument of the `content` parameter.
+
+- Because `TranslatedPhrase` *inherits* from `Phrase`, an *instance* of `TranslatedPhrase` **automatically has all the methods and attributes** of a `Phrase` instance.
+
+  ``` Python
+  class Phrase:
+    """A class to represent phrases."""
+
+    def __init__(self, content):
+      self.content = content
+
+    def ispalindrome(self):
+      """Return True for a palindrome, False otherwise."""
+      return self.processed_content() == reverse(self.processed_content())
+
+    def processed_content(self):
+      """Process content for palindrome testing."""
+      return self.content.lower()
+
+    def __iter__(self):
+      self.phrase_iterator = iter(self.content)
+      return self
+    
+    def __next__(self):
+      return next(self.phrase_iterator)
+
+  class TranslatedPhrase(Phrase):
+    """A class to represent phrases with translation."""
+
+    def __init__(self, content, translation):
+      # setting `content`
+      super().__init__(content)
+      self.translation = translation
+
+  def reverse(string):
+    """Reverse a string."""
+    return "".join(reversed(string))
+  ```
+
+  ``` Python
+  # REPL
+  PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp007_objects_classes\package> ..\..\venv\Scripts\Activate.ps1
+  (venv) PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp007_objects_classes\package> python
+  Python 3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)] on win32
+  Type "help", "copyright", "credits" or "license" for more information.
+  Ctrl click to launch VS Code Native REPL
+  >>> import importlib
+  >>> import palindrome as palindrome
+  >>> tphrase = palindrome.TranslatedPhrase("Madam", "Dame")  
+  >>> tphrase = palindrome.TranslatedPhrase("Madam", "Frau") 
+  >>> tphrase.content
+  'Madam'
+  >>> tphrase.translation
+  'Frau'
+  >>> tphrase.ispalindrome()
+  True
   ```

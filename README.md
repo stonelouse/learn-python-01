@@ -151,4 +151,5 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 
 - [7.1 Defining Classes](./chp007_objects_classes/README.007.01.classes.md#71-defining-classes)
 - [7.2 Custom Iterators](./chp007_objects_classes/README.007.02.custom-iterators.md#72-custom-iterators)
-- [7.3 Inheritance](./chp007_objects_classes/README.007.03.inheritance.md#72-custom-iterators)
+- [7.3 Inheritance](./chp007_objects_classes/README.007.03.inheritance.md#73-inheritance)
+- [7.4 Derived Classes](./chp007_objects_classes/README.007.03.inheritance.md#74-derived-class)
