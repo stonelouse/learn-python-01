@@ -98,6 +98,9 @@
 
 - Because `TranslatedPhrase` *inherits* from `Phrase`, an *instance* of `TranslatedPhrase` **automatically has all the methods and attributes** of a `Phrase` instance.
 
+- see `chp007_objects_classes\package\palindrome.py`  
+  commit `c0d553ad155d7ed5f4722e5ed39a8ce4ba218b97`
+  
   ``` Python
   class Phrase:
     """A class to represent phrases."""
@@ -134,20 +137,81 @@
   ```
 
   ``` Python
+  # PS …\learn-python-01\chp007_objects_classes\package> python
   # REPL
-  PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp007_objects_classes\package> ..\..\venv\Scripts\Activate.ps1
-  (venv) PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp007_objects_classes\package> python
-  Python 3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)] on win32
-  Type "help", "copyright", "credits" or "license" for more information.
-  Ctrl click to launch VS Code Native REPL
   >>> import importlib
   >>> import palindrome as palindrome
-  >>> tphrase = palindrome.TranslatedPhrase("Madam", "Dame")  
-  >>> tphrase = palindrome.TranslatedPhrase("Madam", "Frau") 
+    >>> tphrase = palindrome.TranslatedPhrase("Madam", "Frau")
   >>> tphrase.content
   'Madam'
   >>> tphrase.translation
   'Frau'
   >>> tphrase.ispalindrome()
   True
+  ```
+
+### Overriding methods
+
+- Now we wanted to use the translation *instead* of the `content` for deter-
+mining whether the `translation` is a palindrome or not? Because we factored `processed_content()` into a *separate method*, we can do this by
+**overriding** the `processed_content()` method in `TranslatedPhrase`.
+
+- see `chp007_objects_classes\package\palindrome.py`  
+  commit `774fb20cb19b01653ba9bc1bf3744e1d66772eb6`
+
+  ``` Python
+  class Phrase:
+    """A class to represent phrases."""
+
+    def __init__(self, content):
+      self.content = content
+
+    def ispalindrome(self):
+      """Return True for a palindrome, False otherwise."""
+      return self.processed_content() == reverse(self.processed_content())
+
+    def processed_content(self):
+      """Process content for palindrome testing."""
+      return self.content.lower()
+
+    def __iter__(self):
+      self.phrase_iterator = iter(self.content)
+      return self
+    
+    def __next__(self):
+      return next(self.phrase_iterator)
+
+  class TranslatedPhrase(Phrase):
+    """A class to represent phrases with translation."""
+
+    def __init__(self, content, translation):
+      # setting `content`
+      super().__init__(content)
+      self.translation = translation
+
+    def processed_content(self):
+      """Override superclass method to use translation."""
+      return self.translation.lower()
+
+  def reverse(string):
+    """Reverse a string."""
+    return "".join(reversed(string))
+  ```
+
+  ``` Python
+  # PS …\learn-python-01\chp007_objects_classes\package> python
+  # REPL
+  >>> import importlib
+  >>> import palindrome as palindrome
+  >>> tphrase = palindrome.TranslatedPhrase("Madam", "Frau")
+  >>> tphrase.content
+  'Madam'
+  >>> tphrase.translation
+  'Frau'
+  >>> tphrase.ispalindrome()
+  False
+  >>> tphrase = palindrome.TranslatedPhrase("recognize", "reconocer")  
+  >>> tphrase.ispalindrome()
+  True
+  >>>
   ```
