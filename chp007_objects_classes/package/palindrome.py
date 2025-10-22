@@ -27,6 +27,10 @@ class TranslatedPhrase(Phrase):
     super().__init__(content)
     self.translation = translation
 
+  def processed_content(self):
+    """Override superclass method to use translation."""
+    return self.translation.lower()
+
 def reverse(string):
   """Reverse a string."""
   return "".join(reversed(string))
