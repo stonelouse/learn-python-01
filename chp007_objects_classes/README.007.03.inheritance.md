@@ -1,6 +1,12 @@
 # 7. Objects and Classes
 
-- Todo
+- [7. Objects and Classes](#7-objects-and-classes)
+  - [7.3 Inheritance](#73-inheritance)
+    - [Investigating *class hierarchy* - `__class__`, `__mro__`](#investigating-class-hierarchy---__class__-__mro__)
+    - [*Composition* vs. *Inheritance*](#composition-vs-inheritance)
+  - [7.4 Derived Class](#74-derived-class)
+    - [Overriding methods](#overriding-methods)
+
 
 ## 7.3 Inheritance
 
@@ -213,5 +219,6 @@ mining whether the `translation` is a palindrome or not? Because we factored `pr
   >>> tphrase = palindrome.TranslatedPhrase("recognize", "reconocer")  
   >>> tphrase.ispalindrome()
   True
-  >>>
+  >>> tphrase.__class__.__mro__
+  (<class 'palindrome.TranslatedPhrase'>, <class 'palindrome.Phrase'>, <class 'object'>)
   ```
