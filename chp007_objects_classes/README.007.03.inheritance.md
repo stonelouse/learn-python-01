@@ -7,7 +7,6 @@
   - [7.4 Derived Class](#74-derived-class)
     - [Overriding methods](#overriding-methods)
 
-
 ## 7.3 Inheritance
 
 - continued see [hartl](../README.md#hartl) p.179
