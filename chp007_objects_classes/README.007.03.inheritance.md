@@ -236,6 +236,29 @@ mining whether the `translation` is a palindrome or not? Because we factored `pr
 
 - Note:  
   Python has a *second convention*, known as name **mangling**,  
-  … that uses **two lead-ing underscores**. 
+  … that uses **two lead-ing underscores**.
   
   With this convention, Python **automatically changes the name of the method** in a standard way so that it **can’t** be easily accessed through an object instance.
+
+- Exercise 7.4.1
+
+  ``` Python
+  >>> import importlib
+  >>> import palindrome as palindrome
+  >>> tphrase = palindrome.TranslatedPhrase("recognize", "reconocer")
+  >>> list(tphrase)
+  ['r', 'e', 'c', 'o', 'g', 'n', 'i', 'z', 'e']
+  >>> # Now, let 'TranslatedPhrase' iterate over 'translation'
+  >>> importlib.reload(palindrome)
+  <module 'palindrome' from '/mnt/ntfs1/home.UserRus/Documents.Notes/__learn-python-01/chp007_objects_classes/package/palindrome.py'>
+  >>> # Note! Still the same instance; Now behavior change  
+  >>> list(tphrase)
+  ['r', 'e', 'c', 'o', 'g', 'n', 'i', 'z', 'e']
+  >>> importlib.reload(palindrome)
+  <module 'palindrome' from '/mnt/ntfs1/home.UserRus/Documents.Notes/__learn-python-01/chp007_objects_classes/package/palindrome.py'>
+  >>> # Note! New instance
+  >>> tphrase = palindrome.TranslatedPhrase("recognize", "reconocer")
+  >>> list(tphrase)
+  ['r', 'e', 'c', 'o', 'n', 'o', 'c', 'e', 'r']
+  >>>  
+  ```

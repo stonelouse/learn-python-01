@@ -31,6 +31,10 @@ class TranslatedPhrase(Phrase):
     """Override superclass method to use translation."""
     return self.translation.lower()
 
+  def __iter__(self):
+    self.phrase_iterator = iter(self.translation)
+    return self
+  
 def reverse(string):
   """Reverse a string."""
   return "".join(reversed(string))
