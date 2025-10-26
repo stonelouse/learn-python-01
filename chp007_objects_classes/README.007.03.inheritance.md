@@ -6,6 +6,8 @@
     - [*Composition* vs. *Inheritance*](#composition-vs-inheritance)
   - [7.4 Derived Class](#74-derived-class)
     - [Overriding methods](#overriding-methods)
+    - [Python does't have private methods - Single underscore convention](#python-doest-have-private-methods---single-underscore-convention)
+    - [Mangling - Double underscore convention](#mangling---double-underscore-convention)
 
 ## 7.3 Inheritance
 
@@ -221,3 +223,19 @@ mining whether the `translation` is a palindrome or not? Because we factored `pr
   >>> tphrase.__class__.__mro__
   (<class 'palindrome.TranslatedPhrase'>, <class 'palindrome.Phrase'>, <class 'object'>)
   ```
+
+### Python does't have private methods - Single underscore convention
+
+- Python doesn't have means to make the visibility of class' attributes and methods *private*,  
+  … but *it does have a convention* for indicating them using a **leading underscore**.
+
+- see `chp007_objects_classes\package\palindrome.py`  
+  commit `103af9253abfa1ca2ff59d31d2052d6a226fa04d`
+
+### Mangling - Double underscore convention
+
+- Note:  
+  Python has a *second convention*, known as name **mangling**,  
+  … that uses **two lead-ing underscores**. 
+  
+  With this convention, Python **automatically changes the name of the method** in a standard way so that it **can’t** be easily accessed through an object instance.
