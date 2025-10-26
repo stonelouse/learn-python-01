@@ -6,9 +6,9 @@ class Phrase:
 
   def ispalindrome(self):
     """Return True for a palindrome, False otherwise."""
-    return self.processed_content() == reverse(self.processed_content())
+    return self._processed_content() == reverse(self._processed_content())
 
-  def processed_content(self):
+  def _processed_content(self):
     """Process content for palindrome testing."""
     return self.content.lower()
 
@@ -27,7 +27,7 @@ class TranslatedPhrase(Phrase):
     super().__init__(content)
     self.translation = translation
 
-  def processed_content(self):
+  def _processed_content(self):
     """Override superclass method to use translation."""
     return self.translation.lower()
 
