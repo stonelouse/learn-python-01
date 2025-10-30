@@ -19,6 +19,7 @@
     - [Chapter 5 - Functions and Iterators](#chapter-5---functions-and-iterators)
     - [Chapter 6 - Functional Programming](#chapter-6---functional-programming)
     - [Chapter 7 - Objects and Classes](#chapter-7---objects-and-classes)
+    - [Chapter 8 - Testing and Test-Driven Development](#chapter-8---testing-and-test-driven-development)
 
 ## References
 
@@ -153,3 +154,7 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [7.2 Custom Iterators](./chp007_objects_classes/README.007.02.custom-iterators.md#72-custom-iterators)
 - [7.3 Inheritance](./chp007_objects_classes/README.007.03.inheritance.md#73-inheritance)
 - [7.4 Derived Classes](./chp007_objects_classes/README.007.03.inheritance.md#74-derived-class)
+
+### Chapter 8 - Testing and Test-Driven Development
+
+- [8.1 Package Setup](./chp008_testing_tdd/README.008.01.testing.md)
