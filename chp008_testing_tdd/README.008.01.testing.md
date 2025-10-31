@@ -46,3 +46,89 @@ for development and testing.
   Available versions: 8.4.2, 8.4.1, 8.4.0, 8.3.5, 8.3.4, 8.3.3, 8.3.2, 8.3.1, 8.3.0, 8.2.2, 8.2.1, 8.2.0, 8.1.2, 8.1.1, 8.0.2, 8.0.1, 8.0.0, 7.4.4, …
   …/learn_python_01_package_008_tutorial> pip install pytest==7.4.4
   ```
+
+## 8.2 Initial Test Coverage
+
+- see [hartl](../README.md#hartl) p.198
+
+- Now that we’ve set up our basic package structure, we’re ready to get started testing.
+
+  ``` bash
+  …//learn_python_01_package_008_tutorial> pytest
+  ================================ test session starts ================================
+  platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+  rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+  collected 0 items                                                                                                                                                                   
+
+  =============================== no tests ran in 0.02s ===============================
+  ```
+
+- Now let’s write a minimal failing test - make it *RED*.
+  
+  ``` Python
+  # tests/test_phrase.py
+  def test_initial_example():
+    assert False
+  ```
+  
+  see `…/learn_python_01_package_008_tutorial/tests/test_phrase.py`  
+  … commit `946df15a5dde31f0d7982e107b27ca048f8a8939`
+
+  We define a function containing one **assertion**,  
+  … which *asserts* that something has a boolean value of `True`,  
+  … in which case the *assertion* **passes**,  
+  … and **fails** *otherwise*.
+
+  Because the code above *asserts* that `False` is `True`, it **fails** by design:
+
+  ``` bash
+  …//learn_python_01_package_008_tutorial> pytest
+  ================================ test session starts ================================
+  platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+  rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+  collected 1 item                                                                                                                                                                    
+
+  tests/test_phrase.py F                                                         [100%]
+
+  ===================================== FAILURES ======================================
+  _______________________________ test_initial_example ________________________________
+
+      def test_initial_example():
+  >       assert False
+  E       assert False
+
+  tests/test_phrase.py:2: AssertionError
+  ============================== short test summary info ==============================
+  FAILED tests/test_phrase.py::test_initial_example - assert False
+  ================================= 1 failed in 0.60s =================================
+  ```
+
+  This test is not useful, but it *demonstrates the concept*.
+
+- Now let's pass the test - make it *GREEN*.
+  
+  ``` Python
+  # tests/test_phrase.py
+  def test_initial_example():
+    assert False
+  ```
+
+  see `…/learn_python_01_package_008_tutorial/tests/test_phrase.py`  
+  … commit `1914a82b42768559a97fe2e2437fe90cacf76f34`
+
+  ``` bash
+  …//learn_python_01_package_008_tutorial> pytest
+  ================================ test session starts ================================
+  platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+  rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+  collected 1 item                                                                                                                                                                    
+
+  tests/test_phrase.py .                                                                                                                                                        [100%]
+
+  ================================= 1 passed in 0.02s =================================
+  ```
+
+### 8.2.1 A Useful Passing Test
+
+- Having learned the basic mechanics of *GREEN* and *RED* tests,  
+  … we’re now ready to write our first *useful* test.
