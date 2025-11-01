@@ -157,4 +157,5 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 
 ### Chapter 8 - Testing and Test-Driven Development
 
-- [8.1 Package Setup](./chp008_testing_tdd/README.008.01.testing.md)
+- [8.1 Package Setup](./chp008_testing_tdd/README.008.01.testing.md#81-package-setup)
+- [8.2 Initial Test Coverage](./chp008_testing_tdd/README.008.01.testing.md#82-initial-test-coverage)

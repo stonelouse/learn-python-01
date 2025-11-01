@@ -1,22 +1,10 @@
 # 8. Testing and Test-Driven Development
 
-- TODO TOC
-
-- As it turns out,  
-  … learning how to write (automatic) Python tests will also give us a chance  
-  … to learn how to create (and publish!) a Python package.
-
-- Here’s our strategy for testing the current palindrome code and extending it to more complicated phrases:
-
-  1. Set up our initial package.
-
-  2. Write automated tests for the existing `ispalindrome()` functionality.
-
-  3. Write a **failing test** for the enhanced palindrome detector (*RED*).
-
-  4. Write (possibly ugly) code to get the test passing (*GREEN*).
-
-  5. Refactor the code to make it prettier, while ensuring that the test suite stays *GREEN*.
+- [8. Testing and Test-Driven Development](#8-testing-and-test-driven-development)
+  - [8.1 Package Setup](#81-package-setup)
+  - [8.2 Initial Test Coverage](#82-initial-test-coverage)
+    - [8.2.1 A Useful Passing Test](#821-a-useful-passing-test)
+    - [8.2.2 Pending Tests - `skip()`](#822-pending-tests---skip)
 
 ## 8.1 Package Setup
 
@@ -54,7 +42,7 @@ for development and testing.
 - Now that we’ve set up our basic package structure, we’re ready to get started testing.
 
   ``` bash
-  …//learn_python_01_package_008_tutorial> pytest
+  …/learn_python_01_package_008_tutorial> pytest
   ================================ test session starts ================================
   platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
   rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
@@ -82,7 +70,7 @@ for development and testing.
   Because the code above *asserts* that `False` is `True`, it **fails** by design:
 
   ``` bash
-  …//learn_python_01_package_008_tutorial> pytest
+  …/learn_python_01_package_008_tutorial> pytest
   ================================ test session starts ================================
   platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
   rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
@@ -117,7 +105,7 @@ for development and testing.
   … commit `1914a82b42768559a97fe2e2437fe90cacf76f34`
 
   ``` bash
-  …//learn_python_01_package_008_tutorial> pytest
+  …/learn_python_01_package_008_tutorial> pytest
   ================================ test session starts ================================
   platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
   rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
@@ -132,3 +120,114 @@ for development and testing.
 
 - Having learned the basic mechanics of *GREEN* and *RED* tests,  
   … we’re now ready to write our first *useful* test.
+
+- At first, wie implement the `Phrase` class in `src/palindrome_stonelouse/phrase.py`.
+
+- Then we have to **install** our package in the *local environment*  
+  … in order to *import* the package.
+
+  ``` bash
+  …/learn_python_01_package_008_tutorial> pip install -e .
+  Obtaining file:///mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+    Installing build dependencies ... done
+    Checking if build backend supports build_editable ... done
+    Getting requirements to build editable ... done
+    Installing backend dependencies ... done
+    Preparing editable metadata (pyproject.toml) ... done
+  Building wheels for collected packages: palindrome_stonelouse
+    Building editable for palindrome_stonelouse (pyproject.toml) ... done
+    Created wheel for palindrome_stonelouse: filename=palindrome_stonelouse-0.0.1-py3-none-any.whl size=2305 sha256=6910b6d50d32cf6b0042fdcc0f6161ad96976f03d163352d0e758f33ad095fd2
+    Stored in directory: /tmp/pip-ephem-wheel-cache-p8cpv6cn/wheels/8b/dd/ed/32e3ff6469c196c2e6e37d06abfca70845b631f884cf524b8a
+  Successfully built palindrome_stonelouse
+  Installing collected packages: palindrome_stonelouse
+  Successfully installed palindrome_stonelouse-0.0.1
+  ```
+
+  see `…/learn_python_01_package_008_tutorial/`  
+  … commit `00e19ff623f3480675c1760f564f999653d5a7cc`
+
+- After that, we can write and run our first test suite:
+
+  ``` Python
+  ## Our test suite for the Phrase class
+
+  # Importing 'Phrase' in the test file
+  from palindrome_stonelouse.phrase import Phrase
+
+  def test_non_palindrome():
+      assert not Phrase("apple").ispalindrome()
+
+  def test_literal_palindrome():
+      assert Phrase("racecar").ispalindrome()
+  ```
+
+  see `…/learn_python_01_package_008_tutorial/`  
+  … commit `5ed21985292fb2b20919629eda038db900309151`
+
+  ``` bash
+  … /learn_python_01_package_008_tutorial> pytest
+  ================================ test session starts ================================
+  platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+  rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+  collected 2 items                                                                                                                                                                  
+
+  tests/test_phrase.py ..                                                        [100%]
+
+  ================================= 2 passed in 0.03s =================================
+  ```
+
+### 8.2.2 Pending Tests - `skip()`
+
+- Furthermore, we'll add a couple of **pending** tests,  
+  … which are *placeholders*/ *reminders* for tests **we want to write later**.  
+
+  The way to write a *pending* test is to use the ***`skip()`*** function.
+
+  ``` Python
+  ## Our test suite for the Phrase class
+
+  # Importing 'Phrase' in the test file
+  from unittest import skip
+  from palindrome_stonelouse.phrase import Phrase
+
+  def test_non_palindrome():
+      assert not Phrase("apple").ispalindrome()
+
+  def test_literal_palindrome():
+      assert Phrase("racecar").ispalindrome()
+
+  def test_mixed_case_palindrome():
+    skip("Not implemented yet")
+
+  def test_palindrome_with_punctuation():
+      skip("Not implemented yet")
+  ```
+
+  ``` bash
+  … /learn_python_01_package_008_tutorial> pytest
+  ================================ test session starts ================================
+  platform linux -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+  rootdir: /mnt/ntfs1/home.UserRus/Documents.Notes/learn_python_01_package_008_tutorial
+  collected 4 items                                                                                                                                                                  
+
+  tests/test_phrase.py ....                                                      [100%]
+
+  ================================= 4 passed in 0.03s =================================
+  ```
+
+  … the output looks different compared to the book?!
+
+- In order to make 100% sure that the tests are testing what we think they’re testing,  
+  … it’s a good practice to get to a **failing state** (*RED*)  
+  … by **intentionally breaking** the tests.
+
+  **Change the application code** to break each of the existing tests in turn,  
+  … and then confirm that they are *GREEN* again **once the original code has been restored**.
+
+  Apparently, you don't have to *re-install* or *reload* the package after the code change,  
+  … changing the application code seems to be enough.
+
+- Exercise 8.2.3
+
+  see `…/learn_python_01_package_008_tutorial/`  
+  … commit `700ccd11eaabdfc6ccf8d802cae73d7374cc49b1`
