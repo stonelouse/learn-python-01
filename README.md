@@ -159,4 +159,5 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 
 - [8.1 Package Setup](./chp008_testing_tdd/README.008.01.testing.md#81-package-setup)
 - [8.2 Initial Test Coverage](./chp008_testing_tdd/README.008.01.testing.md#82-initial-test-coverage)
-- [8.3 Red](./chp008_testing_tdd/README.008.02.testing.md#83-red)
+- [8.3 Red](./chp008_testing_tdd/README.008.02.tdd-red.md#83-red)
+- [8.4 Green](./chp008_testing_tdd/README.008.03.tdd-green.md#84-green)
