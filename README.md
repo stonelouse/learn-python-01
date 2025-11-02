@@ -5,7 +5,7 @@
     - [hartl](#hartl)
   - [Links](#links)
     - [PEP 8](#pep-8)
-    - [Some Python Doc Sides](#some-python-doc-sides)
+    - [Some Python Doc Sites](#some-python-doc-sites)
     - [Emojis](#emojis)
   - [Notes](#notes)
     - [Pythonic/ unPythonic programming](#pythonic-unpythonic-programming)
@@ -34,7 +34,7 @@
 
 - [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
-### Some Python Doc Sides
+### Some Python Doc Sites
 
 - [Index | docs](https://docs.python.org/3/genindex.html)
 - [Built-in Functions | docs](https://docs.python.org/3/library/functions.html)
@@ -94,9 +94,9 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 ### Chapter 1
 
 - [1.2 Python in a REPL](./chp001/README.001.md#12-python-in-a-repl)
-- [1.2 Python in a File](./chp001/README.001.md#13-python-in-a-file)
-- [1.2 Python in a Shell Script](./chp001/README.001.md#14-python-in-a-shell-script)
-- [1.2 Python in a Web Server](./chp001/README.001.md#15-python-in-a-web-server)
+- [1.3 Python in a File](./chp001/README.001.md#13-python-in-a-file)
+- [1.4 Python in a Shell Script](./chp001/README.001.md#14-python-in-a-shell-script)
+- [1.5 Python in a Web Server](./chp001/README.001.md#15-python-in-a-web-server)
 
 ### Chapter 2 - String Basics
 
@@ -119,7 +119,7 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
   - [3.4.3 Appending and Popping](./chp003.lists/README.003.02.md#343-appending-and-popping)
   - [3.4.4 Undoing a Split - Join](./chp003.lists/README.003.02.md#344-undoing-a-split---join)
 - [3.5 List Iteration](./chp003.lists/README.003.03.md#35-list-iteration)
-- [3.6 Tuples and Sets](./chp003.lists/README.003.04.tuples&set.md#36-tuples-and-sets)
+- [3.6 Tuples and Sets](./chp003.lists/README.003.04.tuples%26set.md#36-tuples-and-sets)
 
 ### Chapter 4 - Other Native Objects
 
@@ -141,7 +141,7 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 ### Chapter 6 - Functional Programming
 
 - [6.1 List Comprehensions](./chp006_funcprog/README.006.01.funcprog.list-comprehensions.md#61-list-comprehensions)
-- [6..2 List Comprehensions with Conditions](./chp006_funcprog/README.006.01.funcprog.list-comprehensions.md#62-list-comprehensions-with-conditions)
+- [6.2 List Comprehensions with Conditions](./chp006_funcprog/README.006.01.funcprog.list-comprehensions.md#62-list-comprehensions-with-conditions)
 - [6.3 Dictionary Comprehensions](./chp006_funcprog/README.006.02.funcprog.dict-comprehensions.md#63-dictionary-comprehensions)
 - [6.4 Generator and Set Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#64-generator-and-set-comprehensions)
 - [6.4.1 Generator Comprehensions](./chp006_funcprog/README.006.03.funcprog.generator-set-comprehensions.md#641-generator-comprehensions)
@@ -159,3 +159,4 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 
 - [8.1 Package Setup](./chp008_testing_tdd/README.008.01.testing.md#81-package-setup)
 - [8.2 Initial Test Coverage](./chp008_testing_tdd/README.008.01.testing.md#82-initial-test-coverage)
+- [8.3 Red](./chp008_testing_tdd/README.008.02.testing.md#83-red)
