@@ -161,4 +161,5 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [8.2 Initial Test Coverage](./chp008_testing_tdd/README.008.01.testing.md#82-initial-test-coverage)
 - [8.3 Red](./chp008_testing_tdd/README.008.02.tdd-red.md#83-red)
 - [8.4 Green](./chp008_testing_tdd/README.008.03.tdd-green.md#84-green)
-- [](./chp008_testing_tdd/README.008.04.tdd-refactor.md#85-refactor)
+- [8.5 Refactor](./chp008_testing_tdd/README.008.04.tdd-refactor.md#85-refactor)
+- [8.5.1 Publishing the Python Package](./chp008_testing_tdd/README.008.05.publishing.md#851-publishing-the-python-package)

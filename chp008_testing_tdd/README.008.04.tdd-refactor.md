@@ -5,7 +5,7 @@
 - continued see [hartl](../README.md#hartl) p.220
 
 - Our current code relies on a rather *cumbersome* `for` loop that appends to a list  
-  … rather than creating it all at once. 
+  … rather than creating it all at once.
   
 - In this section, we’ll **refactor** our code,  
   … which is the **process of changing the form of code without changing its function**.
