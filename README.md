@@ -1,6 +1,7 @@
 # Learning Python
 
 - [Learning Python](#learning-python)
+  - [TODO](#todo)
   - [References](#references)
     - [hartl](#hartl)
   - [Links](#links)
@@ -20,6 +21,17 @@
     - [Chapter 6 - Functional Programming](#chapter-6---functional-programming)
     - [Chapter 7 - Objects and Classes](#chapter-7---objects-and-classes)
     - [Chapter 8 - Testing and Test-Driven Development](#chapter-8---testing-and-test-driven-development)
+
+## TODO
+
+- How can I update Python under WSL and how can I create a _venv_?
+
+- ✓ _chp009_: Try to use locally installed _palindrome_ package from _chp008_ on _eplan_
+  → `Successfully installed palindrome_stonelouse-0.0.1`
+
+- ✓ Download `phrases.txt`
+
+- Install Python formatter on _eplan_
 
 ## References
 

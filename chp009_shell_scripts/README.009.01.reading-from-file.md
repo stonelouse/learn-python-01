@@ -13,7 +13,7 @@
 
   ``` Python
   (venv) PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp009_shell_scripts> python
-  >>> file = open("phrases.txt")
+  >>> file = open("my_phrases.txt")
   >>> text = file.read() 
   >>> text
   "Madam, I'm Adam.\nRacecar\nSchiff\n"
@@ -46,7 +46,7 @@
   … together with **as** and the **desired filename**:
 
   ``` Python
-  >>> with open("phrases.txt") as file: # Pythonic!
+  >>> with open("my_phrases.txt") as file: # Pythonic!
   ...   text = file.read();
   ...   
   >>> len(text)
