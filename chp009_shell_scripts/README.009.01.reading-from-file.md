@@ -68,7 +68,8 @@
               print(f"palindrome detected: {line}")
   ```
 
-  see `./palindrome_file.py` commit `3d69b651ae207faacbfcefb1b57fa997e900545a`.
+  see `./palindrome_file.py` commit `4c2104505bfb0ccdf49b56a73c9e53d5b9b73eca`.
+  4c2104505bfb0ccdf49b56a73c9e53d5b9b73eca
 
   ``` pwsh
   PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp009_shell_scripts> pip list
