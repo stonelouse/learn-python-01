@@ -56,3 +56,36 @@
   This code arranges to **close the file automatically**  
   … at the end of the `with` statement.
 
+- Now we use the locally installed _package_ `palindrome_stonelouse`
+
+  ``` Python
+  from palindrome_stonelouse.phrase import Phrase
+
+  with open("phrases.txt") as file:
+      text = file.read()
+      for line in text.splitlines():  # Arguably not Pythonic!
+          if Phrase(line).ispalindrome():
+              print(f"palindrome detected: {line}")
+  ```
+
+  see `./palindrome_file.py` commit `3d69b651ae207faacbfcefb1b57fa997e900545a`.
+
+  ``` pwsh
+  PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp009_shell_scripts> pip list
+  Package               Version Editable project location
+  --------------------- ------- -------------------------------------------------------------------
+  palindrome_stonelouse 0.0.1   D:\NoScan\home.rus\dev.ext.prj\learn_python_01_package_008_tutorial
+  pip                   25.3
+  PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp009_shell_scripts> python .\palindrome_file.py
+  palindrome detected: A butt tuba
+  …
+  ```
+
+- We have to consider that the package `palindrome_stonelouse` seems not to be installed or available, if we run the script in a _venv_
+
+  ``` pwsh
+  (.venv) PS D:\NoScan\home.rus\dev.ext.prj\learn-python-01\chp009_shell_scripts> pip list
+  Package Version
+  ------- -------
+  pip     25.3
+  ```
