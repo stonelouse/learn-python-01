@@ -8,6 +8,7 @@
 
 import re
 
+
 class Phrase:
     """A class to represent phrases."""
 
@@ -39,10 +40,11 @@ def reverse(string):
     """Reverse a string."""
     return "".join(reversed(string))
 
+
 print("hello, world!")
 
 with open("my_phrases.txt") as file:
     text = file.read()
-    for line in text.splitlines(): # Arguably not Pythonic!
+    for line in text.splitlines():  # Arguably not Pythonic!
         if Phrase(line).ispalindrome():
             print(f"palindrome detected: {line}")
