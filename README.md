@@ -1,7 +1,6 @@
 # Learning Python
 
 - [Learning Python](#learning-python)
-  - [TODO](#todo)
   - [References](#references)
     - [hartl](#hartl)
   - [Links](#links)
@@ -21,17 +20,7 @@
     - [Chapter 6 - Functional Programming](#chapter-6---functional-programming)
     - [Chapter 7 - Objects and Classes](#chapter-7---objects-and-classes)
     - [Chapter 8 - Testing and Test-Driven Development](#chapter-8---testing-and-test-driven-development)
-
-## TODO
-
-- ✓ How can I update Python under WSL and how can I create a _venv_?
-
-- ✓ _chp009_: Try to use locally installed _palindrome_ package from _chp008_ on _eplan_
-  → `Successfully installed palindrome_stonelouse-0.0.1`
-
-- ✓ Download `phrases.txt`
-
-- ✓ Install Python formatter on _eplan_
+    - [Chapter 9 - Shell Scripts](#chapter-9---shell-scripts)
 
 ## References
 
@@ -175,3 +164,7 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [8.4 Green](./chp008_testing_tdd/README.008.03.tdd-green.md#84-green)
 - [8.5 Refactor](./chp008_testing_tdd/README.008.04.tdd-refactor.md#85-refactor)
 - [8.5.1 Publishing the Python Package](./chp008_testing_tdd/README.008.05.publishing.md#851-publishing-the-python-package)
+
+### Chapter 9 - Shell Scripts
+
+- [9.1 Reading from Files](./chp009_shell_scripts/README.009.01.reading-from-file.md#91-reading-from-files)
