@@ -5,8 +5,13 @@
 
 from palindrome_stonelouse.phrase import Phrase
 
+# with open("phrases.txt") as file:
+#     text = file.read()
+#     for line in text.splitlines():  # Arguably not Pythonic!
+#         if Phrase(line).ispalindrome():
+#             print(f"palindrome detected: {line}")
+
 with open("phrases.txt") as file:
-    text = file.read()
-    for line in text.splitlines():  # Arguably not Pythonic!
+    for line in file.readlines():  # Pythonic!
         if Phrase(line).ispalindrome():
             print(f"palindrome detected: {line}")
