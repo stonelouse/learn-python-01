@@ -14,4 +14,5 @@ from palindrome_stonelouse.phrase import Phrase
 with open("phrases.txt") as file:
     for line in file.readlines():  # Pythonic!
         if Phrase(line).ispalindrome():
-            print(f"palindrome detected: {line}")
+            # to remove leading and trailing whitespace
+            print(f"palindrome detected: {line.strip()}")
