@@ -168,3 +168,4 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 ### Chapter 9 - Shell Scripts
 
 - [9.1 Reading from Files](./chp009_shell_scripts/README.009.01.reading-from-file.md#91-reading-from-files)
+- [9.2 Writing to a File](./chp009_shell_scripts/README.009.02.writing-to-file.md#92-writing-to-a-file)
