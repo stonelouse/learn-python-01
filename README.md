@@ -169,3 +169,4 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 
 - [9.1 Reading from Files](./chp009_shell_scripts/README.009.01.read-write-file.md#91-reading-from-files)
 - [9.2 Writing to a File](./chp009_shell_scripts/README.009.01.read-write-file.md#92-writing-to-a-file)
+- [9.2 Reading from URLs](./chp009_shell_scripts/README.009.02.read-url.md#92-reading-from-urls)
