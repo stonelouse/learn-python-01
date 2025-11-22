@@ -2,7 +2,8 @@
 
 - [9. Shell Scripts](#9-shell-scripts)
   - [9.1 Reading from Files](#91-reading-from-files)
-  - [9.2 Writing to a file](#92-writing-to-a-file)
+  - [9.1.1 Writing to a file](#911-writing-to-a-file)
+  - [9.1.2 \`if __name__ == '__main__' pattern](#912-if-name--main-pattern)
 
 ## 9.1 Reading from Files
 
@@ -149,12 +150,14 @@
 
   see `./palindrome_file.py` commit id `7b273cfc9114ddabea0e23cdd6fe43646faba401`.
 
-## 9.2 Writing to a file
+## 9.1.1 Writing to a file
 
 - continued see [hartl](../README.md#hartl) p.237
 
 - With [write()](https://docs.python.org/3/library/io.html#io.TextIOBase.write) we can write into a file.  
   … see `chp009_shell_scripts/palindrome_file_write.py` commit `50093cdf0252ad803946619865af50a7b90d8bef`
+
+## 9.1.2 `if __name__ == '__main__' pattern
 
 - One *common pattern* in Python *shell scripts*  
   … is to put the *main steps* in a **separate function** (often called **`main()`**)  

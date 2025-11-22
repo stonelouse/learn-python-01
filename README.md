@@ -168,5 +168,6 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 ### Chapter 9 - Shell Scripts
 
 - [9.1 Reading from Files](./chp009_shell_scripts/README.009.01.read-write-file.md#91-reading-from-files)
-- [9.2 Writing to a File](./chp009_shell_scripts/README.009.01.read-write-file.md#92-writing-to-a-file)
+- [9.1.1 Writing to a File](./chp009_shell_scripts/README.009.01.read-write-file.md#911-writing-to-a-file)
+- [9.1.1 9.1.2 `if __name__ == '__main__' pattern](./chp009_shell_scripts/README.009.01.read-write-file.md#912-if-name--main-pattern)
 - [9.2 Reading from URLs](./chp009_shell_scripts/README.009.02.read-url.md#92-reading-from-urls)
