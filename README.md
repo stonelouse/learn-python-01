@@ -171,3 +171,4 @@ states = ["Kansas", "North Dakota", "Nebraska", "South Dakota"]
 - [9.1.1 Writing to a File](./chp009_shell_scripts/README.009.01.read-write-file.md#911-writing-to-a-file)
 - [9.1.1 9.1.2 `if __name__ == '__main__' pattern](./chp009_shell_scripts/README.009.01.read-write-file.md#912-if-name--main-pattern)
 - [9.2 Reading from URLs](./chp009_shell_scripts/README.009.02.read-url.md#92-reading-from-urls)
+- [9.3 DOM Manipulation at the Commandline](./chp009_shell_scripts/README.009.03.dom_manipulation.md#93-dom-manipulation-at-the-commandline)
