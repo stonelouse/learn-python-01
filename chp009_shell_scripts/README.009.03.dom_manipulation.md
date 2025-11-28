@@ -7,13 +7,15 @@
 - continued see [hartl](../README.md#hartl) p.245
 
 - We want to implement a commandline script that  
-  1. Takes an arbitrary URL argument at the command line
+  1. Takes an arbitrary URL argument at the command-line
   1. Downloads the HTML
   1. Manipulates its content using the DOM
   1. Removes the references (anchor elements)
   1. Collects and prints the paragraph
 
-- For HTML-processing, we use the [*"Beautiful Soap"*](https://pypi.org/project/beautifulsoup4/) package.  
+### BeautifulSoup
+
+- For HTML-processing, we use the [*"Beautiful Soup"*](https://pypi.org/project/beautifulsoup4/) package.  
   … which has a powerful HTML parser.
 
   see also  
@@ -63,6 +65,23 @@
   ``` Python
   >>> doc("sup", class_="reference")
   [<sup class="reference">1</sup>]
-  >>> len(doc("sup", class="reference"))
+  # The extra underscore in 'class_' is included because  
+  # 'class' (no underscore) is reserved for creating Python classes
+  >>> len(doc("sup", class_="reference"))
   1
   ```
+
+- BeautifulSoup provides a method [`.decompose()](TODO), which removes elements from the DOM.
+
+  ``` Python
+  # …
+  >>> for reference in doc("sup", class_="reference"):
+  ...     reference.decompose()
+  ...
+  >>> doc
+  <p>lorem</p><p>ipsum</p>
+  ```
+
+### Reading arguments from command-line
+
+- For reading arguments from the *command-line*, we import the [**`sys` library**](TODO)
