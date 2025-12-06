@@ -85,3 +85,7 @@
 ### Reading arguments from command-line
 
 - For reading arguments from the *command-line*, we import the [**`sys` library**](TODO)
+
+### Processing wiki pages
+
+- see `./chp009_shell_scripts/wiki_text_extractor.py` commit `fbda60d5`
